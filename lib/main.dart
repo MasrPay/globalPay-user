@@ -27,7 +27,7 @@ void main() async {
   runApp(const MyApp());
 }
 
-// This widget is the root of your application
+//  root application
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         initialRoute: Routes.splashScreen,
         getPages: Routes.list,
         initialBinding: BindingsBuilder(
-          () {
+              () {
             Get.put(LanguageController());
             Get.put(AppSettingsController(), permanent: true);
           },
@@ -57,11 +57,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         builder: (context, widget) {
           ScreenUtil.init(context);
           final languageController = Get.find<LanguageController>();
-
-          return Obx(
-            () => MediaQuery(
+          return Obx(() => MediaQuery(
               data: MediaQuery.of(context)
-                  .copyWith(textScaler: const TextScaler.linear(1.0)),
+                  .copyWith(textScaler: const TextScaler.linear(1.1)),
               child: Directionality(
                 textDirection: languageController.isLoading
                     ? TextDirection.ltr

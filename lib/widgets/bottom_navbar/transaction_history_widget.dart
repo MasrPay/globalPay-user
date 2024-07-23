@@ -100,6 +100,7 @@ class TransactionWidget extends StatelessWidget {
                 ],
               ),
             ),
+            const Spacer(),
             Expanded(
               flex: 5,
               child: Column(

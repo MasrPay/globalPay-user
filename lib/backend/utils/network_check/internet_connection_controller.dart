@@ -8,16 +8,23 @@ import 'package:get/get.dart';
 class NetworkController extends GetxController {
   final Connectivity _connectivity = Connectivity();
   // late ConnectivityResult _connectivityResult;
-  late StreamSubscription<ConnectivityResult> _streamSubscription;
+  // late StreamSubscription<ConnectivityResult> _streamSubscription;
+  late StreamSubscription<List<ConnectivityResult>> streamSubscription;
 
   @override
   void onInit() async {
     super.onInit();
-    _initConnectivity();
-    _streamSubscription =
+    await _connectivity.checkConnectivity();
+    // _streamSubscription =
         // _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
-    _connectivity.onConnectivityChanged.listen(_updateConnectionStatus as void Function(List<ConnectivityResult> event)?) as StreamSubscription<ConnectivityResult>;  }
-
+    streamSubscription =
+        _connectivity.onConnectivityChanged.listen((List<ConnectivityResult> result) {
+        });
+  }
+  @override
+  void onClose() {
+    streamSubscription.cancel();
+  }
   Future<void> _initConnectivity() async {
     // _connectivityResult =
     await _connectivity.checkConnectivity();
@@ -47,8 +54,8 @@ class NetworkController extends GetxController {
     }
   }
 
-  @override
-  void onClose() {
-    _streamSubscription.cancel();
-  }
+  // @override
+  // void onClose() {
+  //   _streamSubscription.cancel();
+  // }
 }

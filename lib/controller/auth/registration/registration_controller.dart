@@ -188,7 +188,7 @@ class RegistrationController extends GetxController {
 
     _isSendOTPLoading.value = false;
     update();
-    return _sendOTPEmailModel;
+    return  _sendOTPEmailModel;
   }
 
   final _isLoading2 = false.obs;

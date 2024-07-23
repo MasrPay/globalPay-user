@@ -14,25 +14,27 @@ class LimitWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: crossStart,
         children: [
-          Row(
-            children: [
-              TitleHeading5Widget(
-                text: Strings.feesAndCharges,
-                textAlign: TextAlign.left,
-                fontWeight: FontWeight.w500,
-                color: Get.isDarkMode
-                    ? CustomColor.primaryDarkTextColor.withOpacity(0.8)
-                    : Theme.of(context).primaryColor.withOpacity(0.6),
-              ),
-              TitleHeading5Widget(
-                text: ": $fee",
-                textAlign: TextAlign.left,
-                fontWeight: FontWeight.w500,
-                color: Get.isDarkMode
-                    ? CustomColor.primaryDarkTextColor.withOpacity(0.8)
-                    : Theme.of(context).primaryColor.withOpacity(0.6),
-              ),
-            ],
+          FittedBox(
+            child: Row(
+              children: [
+                TitleHeading5Widget(
+                  text: Strings.feesAndCharges,
+                  textAlign: TextAlign.left,
+                  fontWeight: FontWeight.w500,
+                  color: Get.isDarkMode
+                      ? CustomColor.primaryDarkTextColor.withOpacity(0.8)
+                      : Theme.of(context).primaryColor.withOpacity(0.6),
+                ),
+                TitleHeading5Widget(
+                  text: ": $fee",
+                  textAlign: TextAlign.left,
+                  fontWeight: FontWeight.w500,
+                  color: Get.isDarkMode
+                      ? CustomColor.primaryDarkTextColor.withOpacity(0.8)
+                      : Theme.of(context).primaryColor.withOpacity(0.6),
+                ),
+              ],
+            ),
           ),
           verticalSpace(Dimensions.heightSize * 0.2),
           Row(

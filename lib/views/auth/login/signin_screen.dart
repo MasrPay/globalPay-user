@@ -62,10 +62,12 @@ class _SignInScreenState extends State<SignInScreen> {
         child: ListView(
           physics: const BouncingScrollPhysics(),
           children: [
+            ///--------LOGO-------------
             _logoWidget(
               context,
               logoHeight: height * 0.24,
             ),
+            ///----------*****------------
             _bottomContainerWidget(
               context,
               height: height * 0.73,

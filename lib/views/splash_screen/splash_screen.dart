@@ -40,8 +40,7 @@ class SplashScreen extends StatelessWidget {
                             right: MediaQuery.sizeOf(context).width * 0.15,
                           ),
                           child: LinearProgressIndicator(
-                            color:
-                                Theme.of(context).primaryColor.withOpacity(0.8),
+                            color: Theme.of(context).primaryColor.withOpacity(0.8),
                             backgroundColor: Colors.transparent,
                           ),
                         ),

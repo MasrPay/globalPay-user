@@ -29,11 +29,9 @@ class BottomNavBarScreen extends StatelessWidget {
         appBar: appBarWidget(context),
         extendBody: true,
         backgroundColor: Theme.of(context).primaryColor,
-        bottomNavigationBar:
-            buildBottomNavigationMenu(context, bottomNavBarController),
+        bottomNavigationBar: buildBottomNavigationMenu(context, bottomNavBarController),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        body: bottomNavBarController
-            .page[bottomNavBarController.selectedIndex.value],
+        body: bottomNavBarController.page[bottomNavBarController.selectedIndex.value],
       ),
     );
   }

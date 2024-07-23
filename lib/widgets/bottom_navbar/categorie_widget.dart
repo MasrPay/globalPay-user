@@ -16,38 +16,40 @@ class CategoriesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Column(
-        children: [
-          CircleAvatar(
-            radius: 27,
-            backgroundColor: Get.isDarkMode
-                ? CustomColor.whiteColor.withOpacity(0.06)
-                : Theme.of(context).primaryColor.withOpacity(0.06),
-            child: CustomImageWidget(
-              path: icon,
-              height: 24,
-              width: 24,
-              color: Get.isDarkMode
-                  ? CustomColor.whiteColor
-                  : CustomColor.blackColor,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            CircleAvatar(
+              radius: 27,
+              backgroundColor: Get.isDarkMode
+                  ? CustomColor.whiteColor.withOpacity(0.06)
+                  : Theme.of(context).primaryColor.withOpacity(0.06),
+              child: CustomImageWidget(
+                path: icon,
+                height: 24,
+                width: 24,
+                color: Get.isDarkMode
+                    ? CustomColor.whiteColor
+                    : CustomColor.blackColor,
+              ),
             ),
-          ),
-          verticalSpace(Dimensions.heightSize * 0.5),
-          CustomTitleHeadingWidget(
-            text: text,
-            maxLines: 2,
-            textAlign: TextAlign.center,
-            style: Get.isDarkMode
-                ? CustomStyle.darkHeading5TextStyle.copyWith(
-                    fontWeight: FontWeight.w600,
-                    fontSize: Dimensions.headingTextSize5 * 0.8,
-                  )
-                : CustomStyle.lightHeading5TextStyle.copyWith(
-                    fontWeight: FontWeight.w600,
-                    fontSize: Dimensions.headingTextSize5 * 0.8,
-                  ),
-          ),
-        ],
+            verticalSpace(Dimensions.heightSize * 0.5),
+            CustomTitleHeadingWidget(
+              text: text,
+              maxLines: 2,
+              textAlign: TextAlign.center,
+              style: Get.isDarkMode
+                  ? CustomStyle.darkHeading5TextStyle.copyWith(
+                      fontWeight: FontWeight.w600,
+                      fontSize: Dimensions.headingTextSize5 * 0.8,
+                    )
+                  : CustomStyle.lightHeading5TextStyle.copyWith(
+                      fontWeight: FontWeight.w600,
+                      fontSize: Dimensions.headingTextSize5 * 0.8,
+                    ),
+            ),
+          ],
+        ),
       ),
     );
   }

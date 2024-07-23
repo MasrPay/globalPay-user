@@ -3,24 +3,18 @@ import 'package:get_storage/get_storage.dart';
 import '../utils/basic_screen_imports.dart';
 import 'language_model.dart';
 import 'language_service.dart';
-
 class LanguageController extends GetxController {
   RxString selectedLanguage = "".obs; // Selected language is English
   RxString defLangKey = "".obs; // Default language is English
-
   @override
   void onInit() {
     fetchLanguages().then((value) => getDefaultKey());
     super.onInit();
   }
-
   late List<Language> languages;
-
   final _isLoading = false.obs;
-
   bool get isLoading => _isLoading.value;
   static const String selectedLanguageKey = 'selectedLanguage';
-
   Future<void> fetchLanguages() async {
     _isLoading.value = true;
     try {
@@ -31,7 +25,6 @@ class LanguageController extends GetxController {
       debugPrint('Error fetching language data: $e');
     }
   }
-
   // >> get default language key
   String getDefaultKey() {
     _isLoading.value = true;
@@ -39,11 +32,11 @@ class LanguageController extends GetxController {
       (lang) => lang.status == true,
       orElse: () => languages.firstWhere(
         (lang) => lang.status == false,
-      ), // Fallback to language default code, when status true.
+      ),
+      // Fallback to language default code, when status true.
     );
     defLangKey.value = selectedLang.code;
     debugPrint('Default key ${defLangKey.value} ${selectedLang.code}');
-
     // Load selected language from cache
     final box = GetStorage();
     selectedLanguage.value = box.read(selectedLanguageKey) ?? defLangKey.value;

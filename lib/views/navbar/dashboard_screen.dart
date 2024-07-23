@@ -74,7 +74,6 @@ class DashboardScreen extends StatelessWidget {
 
   _appBarContainer(BuildContext context) {
     var data = controller.dashBoardModel.data.userWallet;
-
     return Container(
       alignment: Alignment.center,
       height: MediaQuery.of(context).size.height * 0.17,
@@ -112,7 +111,7 @@ class DashboardScreen extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(
         top: Dimensions.marginSizeVertical * 0.5,
-        bottom: Dimensions.marginSizeVertical * 0.8,
+        bottom: Dimensions.marginSizeVertical * 0.7,
         right: Dimensions.marginSizeVertical * 0.4,
         left: Dimensions.marginSizeVertical * 0.2,
       ),
@@ -153,11 +152,11 @@ class DashboardScreen extends StatelessWidget {
                 padding: EdgeInsets.only(top: Dimensions.marginSizeVertical),
                 style: Get.isDarkMode
                     ? CustomStyle.darkHeading3TextStyle.copyWith(
-                        fontSize: Dimensions.headingTextSize2,
+                        fontSize: Dimensions.headingTextSize3,
                         fontWeight: FontWeight.w600,
                       )
                     : CustomStyle.lightHeading3TextStyle.copyWith(
-                        fontSize: Dimensions.headingTextSize2,
+                        fontSize: Dimensions.headingTextSize3 ,
                         fontWeight: FontWeight.w600,
                       ),
               ),

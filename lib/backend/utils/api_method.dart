@@ -44,8 +44,7 @@ class ApiMethod {
     log.i(
         '|📍📍📍|----------------- [[ GET ]] method details start -----------------|📍📍📍|');
     log.i(url);
-    log.i(
-        '|📍📍📍|----------------- [[ GET ]] method details ended -----------------|📍📍📍|');
+    log.i('|📍📍📍|----------------- [[ GET ]] method details ended -----------------|📍📍📍|');
 
     try {
       final response = await http
