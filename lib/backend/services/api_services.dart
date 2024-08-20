@@ -1775,7 +1775,7 @@ class ApiServices {
       {required Map<String, dynamic> body}) async {
     Map<String, dynamic>? mapResponse;
     try {
-      mapResponse = await ApiMethod(isBasic: false).post(
+      mapResponse = await ApiMethod(isBasic: true).post(
         ApiEndpoint.sendForgotOTPEmailURL,
         body,
         code: 200,
@@ -1785,6 +1785,11 @@ class ApiServices {
         CommonSuccessModel.fromJson(mapResponse);
         CustomSnackBar.success(checkUserModel.message.success.first.toString());
         return checkUserModel;
+      }else{
+
+        CommonSuccessModel checkUserModel =
+        CommonSuccessModel.fromJson(mapResponse!);
+        print("${checkUserModel.message}GHGHGH");
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send otp email service ==> $e 🐞🐞🐞');
@@ -1799,7 +1804,7 @@ class ApiServices {
       {required Map<String, dynamic> body}) async {
     Map<String, dynamic>? mapResponse;
     try {
-      mapResponse = await ApiMethod(isBasic: false).post(
+      mapResponse = await ApiMethod(isBasic: true).post(
         ApiEndpoint.verifyForgotOTPEmailURL,
         body,
         code: 200,

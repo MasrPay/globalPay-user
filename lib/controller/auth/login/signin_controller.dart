@@ -173,23 +173,26 @@ class SignInController extends GetxController {
 
   CommonSuccessModel get sendForgotOTPEmailModel => _sendForgotOTPEmailModel;
 
-  Future<CommonSuccessModel> sendForgotOTPEmailProcess() async {
+  Future<CommonSuccessModel?> sendForgotOTPEmailProcess() async {
     _isSendForgotOTPLoading.value = true;
     update();
-      Map<String, dynamic> inputBody = {'phone': emailForgotController.text};
-    await ApiServices.sendForgotOTPEmailApi(body: inputBody).then((value) {
+
+    Map<String, dynamic> inputBody = {'phone': emailForgotController.text};
+    try {
+      final value = await ApiServices.sendForgotOTPEmailApi(body: inputBody);
       _sendForgotOTPEmailModel = value!;
       Get.toNamed(Routes.resetOtpScreen);
-      _isSendForgotOTPLoading.value = false;
-      // print(emailForgotController.text.toString());
-      update();
-    }).catchError((onError) {
+      return _sendForgotOTPEmailModel;
+    } catch (onError) {
       log.e(onError);
-    });
-    _isSendForgotOTPLoading.value = false;
-    update();
-    return _sendForgotOTPEmailModel;
+      // Handle the error as needed, e.g., show an error message to the user.
+      return null;
+    } finally {
+      _isSendForgotOTPLoading.value = false;
+      update();
+    }
   }
+
 
   //! Forget Password Email Process
   late CommonSuccessModel _verifyForgotEmailModel;

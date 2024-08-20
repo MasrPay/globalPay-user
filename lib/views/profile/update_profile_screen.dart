@@ -99,21 +99,22 @@ class UpdateProfileScreen extends StatelessWidget {
                 : CustomStyle.lightHeading4TextStyle,
           ),
           verticalSpace(Dimensions.heightSize * 0.5),
-
-          ProfileCountryCodePickerWidget(
-            initialSelection: controller.countryName.value,
-            onChanged: (value) {
-              controller.countryName.value = value.name.toString();
-              controller.phoneCode.value = value.toString();
-            },
-            controller: controller.countryController,
-          ),
+///-----------------------------disable select country
+          // ProfileCountryCodePickerWidget(
+          //   initialSelection: controller.countryName.value,
+          //   onChanged: (value) {
+          //     controller.countryName.value = value.name.toString();
+          //     controller.phoneCode.value = value.toString();
+          //   },
+          //   controller: controller.countryController,
+          // ),
           PhoneNumberInputWidget(
-            readOnly: false,
+            readOnly: true,
             countryCode: controller.phoneCode,
             controller: controller.phoneController,
             hint: Strings.enterPhone,
             label: Strings.phoneNumber,
+
           ),
 
           //ended country number picker

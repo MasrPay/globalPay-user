@@ -321,7 +321,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                 onPressed: () {
                                   if (forgotPasswordFormKey.currentState!
                                       .validate()) {
-
                                     controller.goToForgotEmailVerification();
                                   }
                                 },
