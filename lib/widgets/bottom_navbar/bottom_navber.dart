@@ -3,11 +3,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:masrpay/routes/routes.dart';
 import 'package:masrpay/views/others/custom_image_widget.dart';
-
 import '../../custom_assets/assets.gen.dart';
 import '../../utils/custom_color.dart';
 import '../../utils/dimensions.dart';
-
 // ignore_for_file: deprecated_member_use
 buildBottomNavigationMenu(context, bottomNavBarController) {
   return BottomAppBar(
@@ -50,9 +48,7 @@ buildBottomNavigationMenu(context, bottomNavBarController) {
     ),
   );
 }
-
-bottomItemWidget(var icon, bottomNavBarController, page) {
-  return Expanded(
+bottomItemWidget(var icon, bottomNavBarController, page){return Expanded(
     child: GestureDetector(
       onTap: () {
         bottomNavBarController.selectedIndex.value = page;
@@ -65,5 +61,4 @@ bottomItemWidget(var icon, bottomNavBarController, page) {
         height: Dimensions.iconSizeLarge,
       ),
     ),
-  );
-}
+  );}

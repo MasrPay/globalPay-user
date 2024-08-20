@@ -327,7 +327,7 @@ class $AssetsLogoGen {
 
   /// File path: assets/logo/app_launcher.png
   AssetGenImage get appLauncher =>
-      const AssetGenImage('assets/logo/app_launcher.png');
+      const AssetGenImage('assets/logo/app_launcher.jpg');
 
   /// File path: assets/logo/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/logo/logo.png');

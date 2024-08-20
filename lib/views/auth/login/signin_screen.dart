@@ -154,12 +154,15 @@ class _SignInScreenState extends State<SignInScreen> {
         children: [
           verticalSpace(Dimensions.heightSize),
           PrimaryInputWidget(
+            keyboardType: TextInputType.number,
             controller: controller.emailController,
-            hint: Strings.enterEmailAddress.tr,
-            label: Strings.emailAddress.tr,
+            hint: Strings.enterYourPhoneNumber.tr,
+            label: Strings.phoneNumber.tr,
+            maxLength: 11,
           ),
           verticalSpace(Dimensions.heightSize * 0.7),
           PasswordInputWidget(
+
             controller: controller.passwordController,
             hint: Strings.password.tr,
             label: Strings.password.tr,
@@ -302,9 +305,11 @@ class _SignInScreenState extends State<SignInScreen> {
                       Form(
                         key: forgotPasswordFormKey,
                         child: PrimaryInputWidget(
+                          maxLength: 11,
+                          keyboardType: TextInputType.number,
                           controller: controller.emailForgotController,
-                          hint: Strings.enterEmailAddress.tr,
-                          label: Strings.emailAddress.tr,
+                          hint: Strings.enterYourPhoneNumber.tr,
+                          label: Strings.phoneNumber.tr,
                         ),
                       ),
                       verticalSpace(Dimensions.heightSize * 0.5),
@@ -316,6 +321,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 onPressed: () {
                                   if (forgotPasswordFormKey.currentState!
                                       .validate()) {
+
                                     controller.goToForgotEmailVerification();
                                   }
                                 },

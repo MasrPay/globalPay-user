@@ -148,9 +148,11 @@ class RegistrationScreen extends StatelessWidget {
           Form(
             key: _signUpFormKey,
             child: PrimaryInputWidget(
+              keyboardType: TextInputType.number,
               controller: controller.emailController,
-              hint: Strings.enterEmailAddress.tr,
-              label: Strings.emailAddress.tr,
+              hint: Strings.enterYourPhoneNumber.tr,
+              label: Strings.phoneNumber.tr,
+              maxLength: 11,
             ),
           ),
         ],

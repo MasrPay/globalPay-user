@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_controller.dart' as slider;
 import 'package:flip_card/flip_card.dart';
 import 'package:masrpay/extentions/custom_extentions.dart';
 import 'package:masrpay/utils/basic_screen_imports.dart';

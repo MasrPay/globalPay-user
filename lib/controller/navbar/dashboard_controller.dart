@@ -8,28 +8,29 @@ import '../../custom_assets/assets.gen.dart';
 import '../../language/english.dart';
 import '../../model/categories_model.dart';
 import '../../routes/routes.dart';
+import '../../utils/basic_screen_imports.dart';
 
 class DashBoardController extends GetxController {
   List<CategoriesModel> categoriesData = [];
-  final CarouselController carouselController = CarouselController();
-  RxInt current = 0.obs;
+   // final CarouselController carouselController = CarouselController();
+  CarouselSliderController carouselController = CarouselSliderController();
 
+  RxInt current = 0.obs;
   RxDouble percentCharge = 0.0.obs;
   RxDouble fixedCharge = 0.0.obs;
   RxDouble rate = 0.0.obs;
   RxDouble limitMin = 0.0.obs;
   RxDouble limitMax = 0.0.obs;
-
   // @override
   // void onInit() {
   //   // getDashboardData();
   //   super.onInit();
   // }
 
-  // --------------------------- Stream
+  // --------------------------- Stream-------------------------
   RxBool isFirst = true.obs;
   RxBool isLoggedIn = true.obs;
-  Stream<DashboardModel> getDashboardDataStream() async* {
+  Stream<DashboardModel> getDashboardDataStream()async*{
     while (isLoggedIn.value) {
       await Future.delayed(Duration(seconds: isFirst.value ? 0 : 2));
       if (isLoggedIn.value) {
@@ -39,9 +40,7 @@ class DashBoardController extends GetxController {
       }
     }
   }
-
   final _isLoading = false.obs;
-
   bool get isLoading => _isLoading.value;
   late DashboardModel _dashboardModel;
 
@@ -49,7 +48,6 @@ class DashBoardController extends GetxController {
 
   Future<DashboardModel> getDashboardData() async {
     _isLoading.value = true;
-
     update();
     // calling  from api service
     await ApiServices.dashboardApi().then((value) {
@@ -59,15 +57,12 @@ class DashBoardController extends GetxController {
       LocalStorages.saveCardType(
         cardName: _dashboardModel.data.activeVirtualSystem ?? '',
       );
-
       categoriesData.clear();
-
       if (data.sendMoney) {
         categoriesData.add(CategoriesModel(Assets.icon.send, Strings.send, () {
           Get.toNamed(Routes.moneyTransferScreen);
         }));
       }
-
       if (data.receiveMoney) {
         categoriesData
             .add(CategoriesModel(Assets.icon.receive, Strings.receive, () {

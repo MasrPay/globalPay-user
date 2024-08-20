@@ -187,9 +187,7 @@ class LocalStorages {
 
   static String? getToken() {
     var rtrn = GetStorage().read(tokenKey);
-
     debugPrint(rtrn == null ? "##Token is null###" : "");
-
     return rtrn;
   }
 

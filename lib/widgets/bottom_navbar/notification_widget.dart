@@ -47,25 +47,27 @@ class NotificationWidget extends StatelessWidget {
                     borderRadius:
                         BorderRadius.circular(Dimensions.radius * 0.6),
                   ),
-                  child: Column(
-                    mainAxisAlignment: mainCenter,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      CustomTitleHeadingWidget(
-                        text: dateText,
-                        style: CustomStyle.darkHeading4TextStyle.copyWith(
-                            fontSize: Dimensions.headingTextSize3 * 1.8,
-                            fontWeight: FontWeight.w800,
-                            color: Theme.of(context).primaryColor),
-                      ),
-                      CustomTitleHeadingWidget(
-                        text: monthText,
-                        style: CustomStyle.darkHeading4TextStyle.copyWith(
-                            fontSize: Dimensions.headingTextSize6 * 0.8,
-                            fontWeight: FontWeight.w600,
-                            color: Theme.of(context).primaryColor),
-                      ),
-                    ],
+                  child: FittedBox(
+                    child: Column(
+                      mainAxisAlignment: mainCenter,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CustomTitleHeadingWidget(
+                          text: dateText,
+                          style: CustomStyle.darkHeading4TextStyle.copyWith(
+                              fontSize: Dimensions.headingTextSize3 * 1.8,
+                              fontWeight: FontWeight.w800,
+                              color: Theme.of(context).primaryColor),
+                        ),
+                        CustomTitleHeadingWidget(
+                          text: monthText,
+                          style: CustomStyle.darkHeading4TextStyle.copyWith(
+                              fontSize: Dimensions.headingTextSize6 * 0.8,
+                              fontWeight: FontWeight.w600,
+                              color: Theme.of(context).primaryColor),
+                        ),
+                      ],
+                    ),
                   ),
                 )),
             Expanded(

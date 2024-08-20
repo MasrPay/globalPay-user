@@ -195,7 +195,7 @@ class ApiMethod {
 
       return null;
     } catch (e) {
-      log.e('🐞🐞🐞 Other Error Alert 🐞🐞🐞');
+      log.e('$e🐞🐞🐞 Other Error Alert 🐞🐞🐞');
 
       log.e('❌❌❌ unlisted error received');
 
@@ -370,7 +370,7 @@ class ApiMethod {
 
       return null;
     } catch (e) {
-      log.e('🐞🐞🐞 Other Error Alert 🐞🐞🐞');
+      log.e('$e🐞🐞🐞 Other Error Alert 🐞🐞🐞');
 
       log.e('❌❌❌ unlisted error received');
 
@@ -471,7 +471,7 @@ class ApiMethod {
 
       return null;
     } catch (e) {
-      log.e('🐞🐞🐞 Other Error Alert 🐞🐞🐞');
+      log.e('$e🐞🐞🐞 Other Error Alert 🐞🐞🐞');
 
       log.e('❌❌❌ unlisted error received');
 
@@ -741,7 +741,7 @@ class ApiMethod {
 
       return null;
     } catch (e) {
-      log.e('🐞🐞🐞 Other Error Alert 🐞🐞🐞');
+      log.e('$e🐞🐞🐞 Other Error Alert 🐞🐞🐞');
 
       log.e('❌❌❌ unlisted error received');
 

@@ -80,7 +80,7 @@ class ApiServices {
         return appSettingsModel;
       }
     } catch (e) {
-      log.e('🐞🐞🐞 err from App Settings Api service ==> $e 🐞🐞🐞');
+      log.e('🐞🐞🐞 err from App Settings API service ==> $e 🐞🐞🐞');
       CustomSnackBar.error('Something went Wrong! in App Settings Model');
       return null;
     }
@@ -1782,7 +1782,7 @@ class ApiServices {
       );
       if (mapResponse != null) {
         CommonSuccessModel checkUserModel =
-            CommonSuccessModel.fromJson(mapResponse);
+        CommonSuccessModel.fromJson(mapResponse);
         CustomSnackBar.success(checkUserModel.message.success.first.toString());
         return checkUserModel;
       }

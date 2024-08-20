@@ -88,7 +88,6 @@ class AgentMoneyOutController extends GetxController {
 
     Map<String, dynamic> inputBody = {'email': copyInputController.text};
     update();
-
     await ApiServices.checkAgentExistApi(body: inputBody).then((value) {
       _checkAgentExistModel = value!;
       checkUserMessage.value = _checkAgentExistModel.message.success.first;

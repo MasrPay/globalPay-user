@@ -11,7 +11,6 @@ import 'package:masrpay/utils/size.dart';
 import 'package:masrpay/widgets/bottom_navbar/categorie_widget.dart';
 import 'package:masrpay/widgets/others/custom_glass/custom_glass_widget.dart';
 import 'package:masrpay/widgets/text_labels/custom_title_heading_widget.dart';
-
 import '../../backend/model/bottom_navbar_model/dashboard_model.dart';
 import '../../backend/utils/no_data_widget.dart';
 import '../../language/english.dart';
@@ -19,16 +18,13 @@ import '../../widgets/bottom_navbar/transaction_history_widget.dart';
 
 class DashboardScreen extends StatelessWidget {
   DashboardScreen({super.key});
-
   final controller = Get.find<DashBoardController>();
-
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
       mobileScaffold: Scaffold(body: _bodyWidget(context)),
     );
   }
-
   _bodyWidget(BuildContext context) {
     return StreamBuilder<DashboardModel>(
       stream: controller.getDashboardDataStream(),
@@ -56,7 +52,6 @@ class DashboardScreen extends StatelessWidget {
       },
     );
   }
-
   _draggableSheet(BuildContext context) {
     bool isTablet() {
       return MediaQuery.of(context).size.shortestSide >= 600;
@@ -71,7 +66,6 @@ class DashboardScreen extends StatelessWidget {
       maxChildSize: 1,
     );
   }
-
   _appBarContainer(BuildContext context) {
     var data = controller.dashBoardModel.data.userWallet;
     return Container(
@@ -106,7 +100,6 @@ class DashboardScreen extends StatelessWidget {
       ),
     );
   }
-
   _categoriesWidget(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
@@ -123,7 +116,7 @@ class DashboardScreen extends StatelessWidget {
         crossAxisSpacing: 4.0,
         mainAxisSpacing: 10.0,
         shrinkWrap: true,
-        childAspectRatio: 0.78,
+        childAspectRatio: 0.70,
         children: List.generate(
           controller.categoriesData.length,
           (index) => CategoriesWidget(
@@ -135,7 +128,6 @@ class DashboardScreen extends StatelessWidget {
       ),
     );
   }
-
   _transactionWidget(BuildContext context, ScrollController scrollController) {
     var data = controller.dashBoardModel.data.transactions;
     return data.isEmpty

@@ -32,7 +32,7 @@ class ResetPasswordController extends GetxController {
 
     Map<String, dynamic> inputBody = {
       'code': Get.arguments['otp'],
-      'email': Get.arguments['email'],
+      'phone': Get.arguments['phone'],
       'password': newPasswordController.text,
       'password_confirmation': confirmPasswordController.text,
     };

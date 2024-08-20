@@ -48,8 +48,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         navigatorKey: Get.key,
         initialRoute: Routes.splashScreen,
         getPages: Routes.list,
-        initialBinding: BindingsBuilder(
-              () {
+        initialBinding: BindingsBuilder(() {
             Get.put(LanguageController());
             Get.put(AppSettingsController(), permanent: true);
           },

@@ -42,28 +42,20 @@ class RegistrationController extends GetxController {
   void onPressedSignIn() {
     Get.toNamed(Routes.signInScreen);
   }
-
   File? fronImage;
   File? backImage;
-
   //end kyc form
-
   final _isLoading = false.obs;
-
   bool get isLoading => _isLoading.value;
-
   late CheckRegisterUserModel _checkRegisterUserModel;
-
   CheckRegisterUserModel get checkRegisterUserModel => _checkRegisterUserModel;
-
   // check Exist User Process process function
   Future<CheckRegisterUserModel> checkExistUserProcess() async {
     _isLoading.value = true;
     update();
-
     debugPrint(countryCode.value.toString());
     Map<String, dynamic> inputBody = {
-      'email': emailController.text,
+      'phone': emailController.text,
     };
     // check Exist User api from api service
     await ApiServices.checkRegisterApi(body: inputBody).then((value) {
@@ -74,7 +66,6 @@ class RegistrationController extends GetxController {
       } else {
         Get.toNamed(Routes.kycFromScreen);
       }
-
       _isLoading.value = false;
       update();
     }).catchError((onError) {
@@ -173,13 +164,12 @@ class RegistrationController extends GetxController {
     update();
 
     Map<String, dynamic> inputBody = {
-      'email': email,
+      'phone': email,
       'agree': '1',
     };
 
     await ApiServices.sendRegisterOTPEmailApi(body: inputBody).then((value) {
       _sendOTPEmailModel = value!;
-
       _isSendOTPLoading.value = false;
       update();
     }).catchError((onError) {
@@ -204,9 +194,8 @@ class RegistrationController extends GetxController {
       {required String otpCode}) async {
     _isLoading2.value = true;
     update();
-
     Map<String, dynamic> inputBody = {
-      'email': emailController.text,
+      'phone': emailController.text,
       'code': otpCode,
     };
 

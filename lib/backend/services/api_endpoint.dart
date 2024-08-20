@@ -1,26 +1,24 @@
 import 'package:masrpay/extentions/custom_extentions.dart';
 
 class ApiEndpoint {
-  static const String mainDomain = "https://app.masrpay.com";
+  // static const String mainDomain = "https://app.masrpay.com"; //LIVE
+  static const String mainDomain = "https://stgapp.masrpay.com"; //tEST
   static const String baseUrl = "$mainDomain/api";
   //! auth
   static String loginURL = '/user/login'.addBaseURl();
   static String logOutURL = '/user/logout'.addBaseURl();
   static String sendOTPEmailURL = '/user/send-code'.addBaseURl();
   static String sendForgotOTPEmailURL = '/user/forget/password'.addBaseURl();
-  static String verifyForgotOTPEmailURL =
-      '/user/forget/verify/otp'.addBaseURl();
+  static String verifyForgotOTPEmailURL = '/user/forget/verify/otp'.addBaseURl();
   static String verifyEmailURL = '/user/email-verify'.addBaseURl();
-  static String checkingUserURL =
-      '/user/forget/password/check/user'.addBaseURl();
+  static String checkingUserURL = '/user/forget/password/check/user'.addBaseURl();
   static String resetPasswordURL = '/user/forget/reset/password'.addBaseURl();
   //!register
-  static String checkRegisterURL = '/user/register/check/exist'.addBaseURl();
-  static String basicDataURL = '/get/basic/data'.addBaseURl();
-  static String userKycURL = '/user/kyc'.addBaseURl();
-  static String registerURL = '/user/register'.addBaseURl();
-  static String sendRegisterEmailOTPURL =
-      '/user/register/send/otp'.addBaseURl();
+  static String checkRegisterURL ='/user/register/check/exist'.addBaseURl();
+  static String basicDataURL ='/get/basic/data'.addBaseURl();
+  static String userKycURL ='/user/kyc'.addBaseURl();
+  static String registerURL ='/user/register'.addBaseURl();
+  static String sendRegisterEmailOTPURL ='/user/register/send/otp'.addBaseURl();
   static String verifyRegisterEmailOTPURL =
       '/user/register/verify/otp'.addBaseURl();
   //! navbar

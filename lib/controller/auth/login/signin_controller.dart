@@ -71,7 +71,7 @@ class SignInController extends GetxController {
     update();
 
     Map<String, dynamic> inputBody = {
-      'email': emailController.text,
+      'phone': emailController.text,
       'password': passwordController.text,
     };
     // calling login api from api service
@@ -87,7 +87,6 @@ class SignInController extends GetxController {
         isEmailVerification.value = false;
 
         LocalStorages.saveToken(token: loginModel.data.token.toString());
-
         _goToEmailVerification(_loginModel);
       } else {
         _goToSavedUser(_loginModel);
@@ -177,18 +176,16 @@ class SignInController extends GetxController {
   Future<CommonSuccessModel> sendForgotOTPEmailProcess() async {
     _isSendForgotOTPLoading.value = true;
     update();
-
-    Map<String, dynamic> inputBody = {'email': emailForgotController.text};
-
+      Map<String, dynamic> inputBody = {'phone': emailForgotController.text};
     await ApiServices.sendForgotOTPEmailApi(body: inputBody).then((value) {
       _sendForgotOTPEmailModel = value!;
       Get.toNamed(Routes.resetOtpScreen);
       _isSendForgotOTPLoading.value = false;
+      // print(emailForgotController.text.toString());
       update();
     }).catchError((onError) {
       log.e(onError);
     });
-
     _isSendForgotOTPLoading.value = false;
     update();
     return _sendForgotOTPEmailModel;
@@ -207,14 +204,14 @@ class SignInController extends GetxController {
 
     Map<String, dynamic> inputBody = {
       'code': otpCode,
-      'email': emailForgotController.text,
+      'phone': emailForgotController.text,
     };
 
     await ApiServices.verifyForgotEmailApi(body: inputBody).then((value) {
       _verifyForgotEmailModel = value!;
       Get.offAllNamed(Routes.resetPasswordScreen, arguments: {
         'otp': otpCode,
-        'email': emailForgotController.text,
+        'phone': emailForgotController.text,
       });
       _isLoading2.value = false;
       update();

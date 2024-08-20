@@ -8,47 +8,49 @@ class BasicDataModel {
   Data data;
 
   factory BasicDataModel.fromJson(Map<String, dynamic> json) => BasicDataModel(
-        message: Message.fromJson(json["message"]),
-        data: Data.fromJson(json["data"]),
-      );
+    message: Message.fromJson(json["message"]),
+    data: Data.fromJson(json["data"]),
+  );
 
   Map<String, dynamic> toJson() => {
-        "message": message.toJson(),
-        "data": data.toJson(),
-      };
+    "message": message.toJson(),
+    "data": data.toJson(),
+  };
 }
 
 class Data {
   Data({
     required this.emailVerification,
     required this.kycVerification,
-    required this.mobileCode,
-    required this.registerKycFields,
+    this.mobileCode,
+    this.registerKycFields,
     required this.countries,
   });
+
   bool emailVerification;
   bool kycVerification;
   dynamic mobileCode;
-  RegisterKycFields registerKycFields;
+  RegisterKycFields? registerKycFields;
   List<Country> countries;
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
-        emailVerification: json["email_verification"],
-        kycVerification: json["kyc_verification"],
-        mobileCode: json["mobile_code"],
-        registerKycFields:
-            RegisterKycFields.fromJson(json["register_kyc_fields"]),
-        countries: List<Country>.from(
-            json["countries"].map((x) => Country.fromJson(x))),
-      );
+    emailVerification: json["email_verification"],
+    kycVerification: json["kyc_verification"],
+    mobileCode: json["mobile_code"],
+    registerKycFields: json["register_kyc_fields"] != null
+        ? RegisterKycFields.fromJson(json["register_kyc_fields"])
+        : null,
+    countries: List<Country>.from(
+        json["countries"].map((x) => Country.fromJson(x))),
+  );
 
   Map<String, dynamic> toJson() => {
-        "email_verification": emailVerification,
-        "kyc_verification": kycVerification,
-        "mobile_code": mobileCode,
-        "register_kyc_fields": registerKycFields.toJson(),
-        "countries": List<dynamic>.from(countries.map((x) => x.toJson())),
-      };
+    "email_verification": emailVerification,
+    "kyc_verification": kycVerification,
+    "mobile_code": mobileCode,
+    "register_kyc_fields": registerKycFields?.toJson(),
+    "countries": List<dynamic>.from(countries.map((x) => x.toJson())),
+  };
 }
 
 class Country {
@@ -69,22 +71,22 @@ class Country {
   dynamic currencySymbol;
 
   factory Country.fromJson(Map<String, dynamic> json) => Country(
-        id: json["id"],
-        name: json["name"],
-        mobileCode: json["mobile_code"],
-        currencyName: json["currency_name"],
-        currencyCode: json["currency_code"],
-        currencySymbol: json["currency_symbol"],
-      );
+    id: json["id"],
+    name: json["name"],
+    mobileCode: json["mobile_code"],
+    currencyName: json["currency_name"],
+    currencyCode: json["currency_code"],
+    currencySymbol: json["currency_symbol"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "mobile_code": mobileCode,
-        "currency_name": currencyName,
-        "currency_code": currencyCode,
-        "currency_symbol": currencySymbol,
-      };
+    "id": id,
+    "name": name,
+    "mobile_code": mobileCode,
+    "currency_name": currencyName,
+    "currency_code": currencyCode,
+    "currency_symbol": currencySymbol,
+  };
 }
 
 class RegisterKycFields {
@@ -121,15 +123,15 @@ class RegisterKycFields {
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "slug": slug,
-        "user_type": userType,
-        "fields": List<dynamic>.from(fields.map((x) => x.toJson())),
-        "status": status,
-        "last_edit_by": lastEditBy,
-        "created_at": createdAt.toIso8601String(),
-        "updated_at": updatedAt.toIso8601String(),
-      };
+    "id": id,
+    "slug": slug,
+    "user_type": userType,
+    "fields": List<dynamic>.from(fields.map((x) => x.toJson())),
+    "status": status,
+    "last_edit_by": lastEditBy,
+    "created_at": createdAt.toIso8601String(),
+    "updated_at": updatedAt.toIso8601String(),
+  };
 }
 
 class Field {
@@ -148,20 +150,20 @@ class Field {
   Validation validation;
 
   factory Field.fromJson(Map<String, dynamic> json) => Field(
-        type: json["type"],
-        label: json["label"],
-        name: json["name"],
-        required: json["required"],
-        validation: Validation.fromJson(json["validation"]),
-      );
+    type: json["type"],
+    label: json["label"],
+    name: json["name"],
+    required: json["required"],
+    validation: Validation.fromJson(json["validation"]),
+  );
 
   Map<String, dynamic> toJson() => {
-        "type": type,
-        "label": label,
-        "name": name,
-        "required": required,
-        "validation": validation.toJson(),
-      };
+    "type": type,
+    "label": label,
+    "name": name,
+    "required": required,
+    "validation": validation.toJson(),
+  };
 }
 
 class Validation {
@@ -180,20 +182,20 @@ class Validation {
   bool required;
 
   factory Validation.fromJson(Map<String, dynamic> json) => Validation(
-        max: json["max"],
-        mimes: List<String>.from(json["mimes"].map((x) => x)),
-        min: json["min"],
-        options: List<dynamic>.from(json["options"].map((x) => x)),
-        required: json["required"],
-      );
+    max: json["max"],
+    mimes: List<String>.from(json["mimes"].map((x) => x)),
+    min: json["min"],
+    options: List<dynamic>.from(json["options"].map((x) => x)),
+    required: json["required"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "max": max,
-        "mimes": List<dynamic>.from(mimes.map((x) => x)),
-        "min": min,
-        "options": List<dynamic>.from(options.map((x) => x)),
-        "required": required,
-      };
+    "max": max,
+    "mimes": List<dynamic>.from(mimes.map((x) => x)),
+    "min": min,
+    "options": List<dynamic>.from(options.map((x) => x)),
+    "required": required,
+  };
 }
 
 class Message {
@@ -204,10 +206,10 @@ class Message {
   List<String> success;
 
   factory Message.fromJson(Map<String, dynamic> json) => Message(
-        success: List<String>.from(json["success"].map((x) => x)),
-      );
+    success: List<String>.from(json["success"].map((x) => x)),
+  );
 
   Map<String, dynamic> toJson() => {
-        "success": List<dynamic>.from(success.map((x) => x)),
-      };
+    "success": List<dynamic>.from(success.map((x) => x)),
+  };
 }

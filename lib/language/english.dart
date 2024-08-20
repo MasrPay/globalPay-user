@@ -116,7 +116,7 @@ class Strings {
   static const String signInWith = 'signInWith';
   static const String forgotPasswordd = 'forgotPasswordd';
   static const String newToApp = 'newToApp';
-  static const String enterYourPhoneNumber = 'enterYourPhoneNumber';
+  static const String enterYourPhoneNumber = 'EnterYourPhoneNumber';
   static const String cancel = 'cancel';
   static const String enterPhone = 'enterPhone';
 
@@ -561,7 +561,7 @@ class Strings {
   static const String enterCustomerEmail = "enterCustomerEmail";
   static const String enterDateOfBirth = "mm/day/year";
   static const String dateOfBirth = "dateOfBirth";
-  static const String enterPhoneNumber = "enterPhoneNumber";
+  static const String enterPhoneNumber = "EnterPhoneNumber";
   static const String cardId = "cardId";
   static const String customerId = "customerId";
   static const String houseNumber = "House Number";

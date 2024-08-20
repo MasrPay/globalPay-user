@@ -27,12 +27,15 @@ class BasicDataController extends GetxController {
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
   final emailController = TextEditingController();
+
   final phoneNumberController = TextEditingController();
   final countryCodeController = TextEditingController();
   final countryController = TextEditingController();
+
   final cityController = TextEditingController();
   final zipCodeController = TextEditingController();
   final frontPartController = TextEditingController();
+
   final backPartController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
@@ -77,8 +80,8 @@ class BasicDataController extends GetxController {
   @override
   void onInit() {
     countryCodeController.text = LocalStorages.getCountry()!;
-    countryController.text = LocalStorages.getCountry()!;
-    getBasicData();
+     countryController.text = LocalStorages.getCountry()!;
+     getBasicData();
     super.onInit();
   }
 
@@ -95,114 +98,130 @@ class BasicDataController extends GetxController {
     inputFieldControllers.clear();
     _isLoading.value = true;
     update();
-
     await ApiServices.basicData().then((value) {
       _basicDataModel = value!;
-      final data = _basicDataModel.data.registerKycFields.fields;
-      LocalStorages.saveEmailVerification(
-          isEmailVerification: _basicDataModel.data.emailVerification);
-      LocalStorages.saveKycVerification(
-          isKycVerification: _basicDataModel.data.kycVerification);
+      if(_basicDataModel.data.registerKycFields==null){
+        LocalStorages.saveEmailVerification(
+            isEmailVerification: _basicDataModel.data.emailVerification);
+        LocalStorages.saveKycVerification(
+            isKycVerification: _basicDataModel.data.kycVerification);
 
-      LocalStorages.saveCountryCode(
-          countryCodeValue:
-              _basicDataModel.data.countries.first.mobileCode.toString());
-      LocalStorages.saveCountry(
-          countryValue: _basicDataModel.data.countries.first.name.toString());
-      countryController.text =
-          _basicDataModel.data.countries.first.name.toString();
+        LocalStorages.saveCountryCode(
+            countryCodeValue:
+            _basicDataModel.data.countries.first.mobileCode.toString());
+        LocalStorages.saveCountry(
+            countryValue: _basicDataModel.data.countries.first.name.toString());
+        countryController.text =
+            _basicDataModel.data.countries.first.name.toString();
+        _isLoading.value = false;
+        update();
+      }else{
+        final data = _basicDataModel.data.registerKycFields!.fields;
+        LocalStorages.saveEmailVerification(
+            isEmailVerification: _basicDataModel.data.emailVerification);
+        LocalStorages.saveKycVerification(
+            isKycVerification: _basicDataModel.data.kycVerification);
 
-      if (LocalStorages.isKycVerification()) {
-        for (int item = 0; item < data.length; item++) {
-          // make the dynamic controller
-          var textEditingController = TextEditingController();
-          inputFieldControllers.add(textEditingController);
+        LocalStorages.saveCountryCode(
+            countryCodeValue:
+            _basicDataModel.data.countries.first.mobileCode.toString());
+        LocalStorages.saveCountry(
+            countryValue: _basicDataModel.data.countries.first.name.toString());
+        countryController.text =
+            _basicDataModel.data.countries.first.name.toString();
 
-          // make dynamic input widget
-          if (data[item].type.contains('file')) {
-            hasFile.value = true;
-            inputFileFields.add(
-              Column(
-                crossAxisAlignment: crossStart,
-                children: [
-                  TitleHeading4Widget(
-                    text: data[item].label,
-                    textAlign: TextAlign.left,
-                    color: CustomColor.primaryLightTextColor,
-                    fontSize: Dimensions.headingTextSize3,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  verticalSpace(Dimensions.heightSize),
-                  KycImageWidget(
-                    labelName: data[item].label,
-                    fieldName: data[item].name,
-                  ),
-                ],
-              ),
-            );
-          } else if (data[item].type.contains('text') ||
-              data[item].type.contains('textarea')) {
-            inputFields.add(
-              Column(
-                children: [
-                  verticalSpace(Dimensions.heightSize),
-                  PrimaryInputWidget(
-                    paddings: EdgeInsets.only(
-                      left: Dimensions.widthSize,
-                      right: Dimensions.widthSize,
-                      bottom: Dimensions.heightSize,
+        if (LocalStorages.isKycVerification()) {
+          for (int item = 0; item < data.length; item++) {
+            // make the dynamic controller
+            var textEditingController = TextEditingController();
+            inputFieldControllers.add(textEditingController);
+            // make dynamic input widget
+            if (data[item].type.contains('file')) {
+              hasFile.value = true;
+              inputFileFields.add(
+                Column(
+                  crossAxisAlignment: crossStart,
+                  children: [
+                    TitleHeading4Widget(
+                      text: data[item].label,
+                      textAlign: TextAlign.left,
+                      color: CustomColor.primaryLightTextColor,
+                      fontSize: Dimensions.headingTextSize3,
+                      fontWeight: FontWeight.w600,
                     ),
-                    controller: inputFieldControllers[item],
-                    hint: data[item].label,
-                    isValidator: data[item].required,
-                    label: data[item].label,
-                  ),
-                ],
-              ),
-            );
-          }
-          // final selectedIDType = "".obs;
-          // List<IdTypeModel> idTypeList = [];
-          else if (data[item].type.contains('select')) {
-            hasFile.value = true;
-            selectedIDType.value =
-                data[item].validation.options.first.toString();
-            inputFieldControllers[item].text = selectedIDType.value;
-            for (var element in data[item].validation.options) {
-              idTypeList.add(IdTypeModel(element, element));
+                    verticalSpace(Dimensions.heightSize),
+                    KycImageWidget(
+                      labelName: data[item].label,
+                      fieldName: data[item].name,
+                    ),
+                  ],
+                ),
+              );
             }
-            inputFields.add(
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Obx(() => CustomDropDown<IdTypeModel>(
-                      items: idTypeList,
-                      title: data[item].label,
-                      hint: selectedIDType.value.isEmpty
-                          ? Strings.selectType
-                          : selectedIDType.value,
-                      onChanged: (value) {
-                        selectedIDType.value = value!.title;
-                      },
-                      padding: EdgeInsets.symmetric(
-                        horizontal: Dimensions.paddingHorizontalSize * 0.25,
+            else if (data[item].type.contains('text') || data[item].type.contains('textarea')) {
+              inputFields.add(
+                Column(
+                  children: [
+                    verticalSpace(Dimensions.heightSize),
+                    PrimaryInputWidget(
+                      paddings: EdgeInsets.only(
+                        left: Dimensions.widthSize,
+                        right: Dimensions.widthSize,
+                        bottom: Dimensions.heightSize,
                       ),
-                      titleTextColor:
-                          CustomColor.primaryLightTextColor.withOpacity(.2),
-                      borderEnable: true,
-                      dropDownFieldColor: Colors.transparent,
-                      dropDownIconColor:
-                          CustomColor.primaryLightTextColor.withOpacity(.2))),
-                  verticalSpace(Dimensions.marginBetweenInputBox * .8),
-                ],
-              ),
-            );
+                      controller: inputFieldControllers[item],
+                      hint: data[item].label,
+                      isValidator: data[item].required,
+                      label: data[item].label,
+                    ),
+                  ],
+                ),
+              );
+            }
+            // final selectedIDType = "".obs;
+            // List<IdTypeModel> idTypeList = [];
+            else if (data[item].type.contains('select')) {
+              hasFile.value = true;
+              selectedIDType.value =
+                  data[item].validation.options.first.toString();
+              inputFieldControllers[item].text = selectedIDType.value;
+              for (var element in data[item].validation.options) {
+                idTypeList.add(IdTypeModel(element, element));
+              }
+              inputFields.add(
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Obx(() => CustomDropDown<IdTypeModel>(
+                        items: idTypeList,
+                        title: data[item].label,
+                        hint: selectedIDType.value.isEmpty
+                            ? Strings.selectType
+                            : selectedIDType.value,
+                        onChanged: (value) {
+                          selectedIDType.value = value!.title;
+                        },
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Dimensions.paddingHorizontalSize * 0.25,
+                        ),
+                        titleTextColor:
+                        CustomColor.primaryLightTextColor.withOpacity(.2),
+                        borderEnable: true,
+                        dropDownFieldColor: Colors.transparent,
+                        dropDownIconColor:
+                        CustomColor.primaryLightTextColor.withOpacity(.2))),
+                    verticalSpace(Dimensions.marginBetweenInputBox * .8),
+                  ],
+                ),
+              );
+            }
           }
         }
+
+        _isLoading.value = false;
+        update();
       }
 
-      _isLoading.value = false;
-      update();
     }).catchError(
       (onError) {
         log.e(onError);
@@ -229,7 +248,7 @@ class BasicDataController extends GetxController {
     Map<String, String> inputBody = {
       'firstname': firstNameController.text,
       'lastname': lastNameController.text,
-      'email': controller.emailController.text,
+      // 'email': controller.emailController.text,
       'phone_code': countryCode.value,
       'phone': phoneNumberController.text,
       'country': countryController.text,
@@ -239,21 +258,21 @@ class BasicDataController extends GetxController {
       'password_confirmation': confirmPasswordController.text,
       'agree': isAgree.toString(),
     };
-    final data = _basicDataModel.data.registerKycFields.fields;
+    if(_basicDataModel.data.registerKycFields!=null){
+      final data = _basicDataModel.data.registerKycFields!.fields;
 
-    for (int i = 0; i < data.length; i += 1) {
-      if (data[i].type != 'file') {
-        inputBody[data[i].name] = inputFieldControllers[i].text;
+      for (int i = 0; i < data.length; i += 1) {
+        if (data[i].type != 'file') {
+          inputBody[data[i].name] = inputFieldControllers[i].text;
+        }
       }
     }
-
     await ApiServices.registrationApi(
             body: inputBody, fieldList: listFieldName, pathList: listImagePath)
         .then((value) {
       _registrationModel = value!;
       _isLoading.value = false;
       update();
-
       _goToSavedUser(_registrationModel);
     }).catchError((onError) {
       log.e(onError);

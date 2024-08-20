@@ -10,6 +10,7 @@ import '../../../../backend/model/categories/virtual_card/virtual_card_flutter_w
 import '../../../../backend/services/api_services.dart';
 import '../../../../backend/utils/logger.dart';
 import '../../../../routes/routes.dart';
+import '../../../../utils/basic_screen_imports.dart';
 import '../../../navbar/dashboard_controller.dart';
 
 final log = logger(VirtualCardController);
@@ -28,7 +29,9 @@ class VirtualCardController extends GetxController {
   RxDouble totalFee = 0.0.obs;
 
   //-- for slider
-  final CarouselController carouselController = CarouselController();
+  // final CarouselController carouselController = CarouselController();
+  CarouselSliderController carouselController = CarouselSliderController();
+
   RxInt current = 0.obs;
 
   @override

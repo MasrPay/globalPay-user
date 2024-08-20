@@ -115,14 +115,14 @@ class KycFromScreen extends StatelessWidget {
             ],
           ),
           verticalSpace(Dimensions.heightSize),
-          PrimaryInputWidget(
-            readOnly: true,
-            controller: registrationController.emailController,
-            hint: Strings.enterEmailAddress.tr,
-            label: Strings.emailAddress.tr,
-            keyboardType: TextInputType.emailAddress,
-          ),
-          verticalSpace(Dimensions.heightSize),
+          // PrimaryInputWidget(
+          //   readOnly: true,
+          //   controller: registrationController.emailController,
+          //   hint: Strings.enterEmailAddress.tr,
+          //   label: Strings.emailAddress.tr,
+          //   keyboardType: TextInputType.emailAddress,
+          // ),
+          // verticalSpace(Dimensions.heightSize),
           CountryInputWidget(
             countryCode: kycController.countryCode,
             readOnly: true,

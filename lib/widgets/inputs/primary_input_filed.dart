@@ -7,6 +7,7 @@ import '../../language/language_controller.dart';
 class PrimaryInputWidget extends StatefulWidget {
   final String hint, icon, label;
   final int maxLines;
+  final int? maxLength;
   final bool isValidator;
   final bool isTrxHash;
   final EdgeInsetsGeometry? paddings;
@@ -18,7 +19,6 @@ class PrimaryInputWidget extends StatefulWidget {
   final bool? readOnly;
   final Widget? suffixIcon;
   final String? optionalLabel;
-
   const PrimaryInputWidget({
     super.key,
     required this.controller,
@@ -27,6 +27,7 @@ class PrimaryInputWidget extends StatefulWidget {
     this.isValidator = true,
     this.isTrxHash = false,
     this.maxLines = 1,
+    this.maxLength,
     this.paddings,
     required this.label,
     this.keyboardType,
@@ -85,6 +86,7 @@ class _PrimaryInputWidgetState extends State<PrimaryInputWidget> {
         verticalSpace(7),
         Obx(
           () => TextFormField(
+            maxLength: widget.maxLength,
             readOnly: widget.readOnly ?? false,
             validator: widget.isValidator == false
                 ? null
@@ -117,6 +119,7 @@ class _PrimaryInputWidgetState extends State<PrimaryInputWidget> {
             keyboardType: widget.keyboardType,
             inputFormatters: widget.inputFormatters,
             maxLines: widget.maxLines,
+
             decoration: InputDecoration(
               hintText: languageController.getTranslation(widget.hint),
               hintStyle: GoogleFonts.inter(

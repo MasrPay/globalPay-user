@@ -45,7 +45,7 @@ class Routes {
   static const String virtualCardScreen = '/virtualCardScreen';
   static const String cardDetailsScreen = '/cardDetailsScreen';
   static const String addFundScreen = '/addFundScreen';
-  static const String buyCardScreen = '/buyCard';
+  static const String buyCardScreen = '/bu+-yCard';
   static const String addFundPreviewScreen = '/addFundPreviewScreen';
   static const String transactionHistoryScreen = '/transactionHistoryScreen';
 
