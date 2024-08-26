@@ -130,7 +130,7 @@ class KycFromScreen extends StatelessWidget {
             readOnly: true,
             initVal: phoneNum,
             // countryCode: kycController.countryCode,///old
-            countryCode: '02'.obs, ///New
+            countryCode: '+2'.obs, ///New
             // controller: kycController.phoneNumberController,///old
             hint: Strings.xxx.tr,
             label: Strings.phoneNumber.tr,
