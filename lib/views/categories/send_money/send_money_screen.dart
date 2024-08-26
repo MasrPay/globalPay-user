@@ -66,14 +66,16 @@ class MoneyTransferScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 CopyInputWidget(
+                  maxLength: 11,
+                  keyboardType: TextInputType.number,
                   suffixIcon: Assets.icon.scan,
                   suffixColor: CustomColor.whiteColor,
                   onTap: () {
                     Get.toNamed(Routes.qRCodeScreen);
                   },
                   controller: controller.copyInputController,
-                  hint: Strings.enterEmailAddress,
-                  label: Strings.emailAddress,
+                  hint: Strings.enterPhoneNumber,
+                  label: Strings.phoneNumber,
                 ),
                 Obx(() {
                   return TitleHeading5Widget(

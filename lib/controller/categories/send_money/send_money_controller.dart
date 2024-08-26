@@ -106,7 +106,7 @@ class SendMoneyController extends GetxController {
   Future<CommonSuccessModel> getCheckUserExistDate() async {
     _isCheckUserLoading.value = true;
 
-    Map<String, dynamic> inputBody = {'email': copyInputController.text};
+    Map<String, dynamic> inputBody = {'phone': copyInputController.text};
     update();
 
     await ApiServices.checkUserExistApi(body: inputBody).then((value) {
@@ -182,7 +182,7 @@ class SendMoneyController extends GetxController {
     _isSendMoneyLoading.value = true;
 
     Map<String, dynamic> inputBody = {
-      'email': copyInputController.text,
+      'phone': copyInputController.text,
       'amount': amountController.text,
     };
     update();

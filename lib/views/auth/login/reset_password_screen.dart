@@ -85,12 +85,16 @@ class ResetPasswordScreen extends StatelessWidget {
           mainAxisAlignment: mainCenter,
           children: [
             PasswordInputWidget(
+              maxLength: 6,
+              keyBoardType: TextInputType.number,
               controller: controller.newPasswordController,
               hint: Strings.enterNewPassword,
               label: Strings.newPassword,
             ),
             verticalSpace(Dimensions.heightSize),
             PasswordInputWidget(
+              keyBoardType: TextInputType.number,
+              maxLength: 6,
               controller: controller.confirmPasswordController,
               hint: Strings.enterConfirmPassword,
               label: Strings.confirmPassword,

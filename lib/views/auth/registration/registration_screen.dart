@@ -176,7 +176,9 @@ class RegistrationScreen extends StatelessWidget {
                     title: Strings.signUp.tr,
                     onPressed: () {
                       if (_signUpFormKey.currentState!.validate()) {
-                        controller.checkExistUserProcess();
+                        controller.checkExistUserProcess(
+
+                        );
                       }
                     },
                     buttonTextColor: CustomColor.whiteColor,

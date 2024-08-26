@@ -47,16 +47,15 @@ class WaitForApprovalScreen extends StatelessWidget {
 
   _imageWidget(BuildContext context) {
     return CustomImageWidget(
-      path: Assets.clipart.waitForApproval,
+      path: Assets.clipart.confirmation,
       height: Dimensions.iconSizeLarge * 6,
       width: Dimensions.iconSizeLarge * 6,
     );
   }
-
   _textWidget(BuildContext context) {
     return TitleSubTitleWidget(
-      title: Strings.waitApproval.tr,
-      subtitle: Strings.waitForYourSubmitted,
+      title: Strings.registerSuccess.tr,
+      subtitle: '',
       crossAxisAlignment: crossCenter,
     );
   }
@@ -65,7 +64,7 @@ class WaitForApprovalScreen extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: Dimensions.marginSizeVertical * 1.4),
       child: PrimaryButton(
-        title: Strings.goToDashboard.tr,
+        title: Strings.goToHome.tr,
         onPressed: (() {
           Get.offAllNamed(Routes.bottomNavBarScreen);
         }),

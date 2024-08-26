@@ -7,21 +7,23 @@ class PhoneNumberInputWidget extends StatefulWidget {
   final String hint, label;
   final RxString countryCode;
   final int maxLines;
+  final dynamic initVal;
   final bool isValidator;
   final bool readOnly;
   final TextInputType? keyBoardType;
   final TextInputAction? textInputAction;
 
   final EdgeInsetsGeometry? paddings;
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   const PhoneNumberInputWidget({
     super.key,
-    required this.controller,
+     this.controller,
     required this.hint,
     this.isValidator = true,
     this.maxLines = 1,
     this.paddings,
+    this.initVal,
     required this.label,
     this.readOnly = false,
     required this.countryCode,
@@ -61,86 +63,90 @@ class _PrimaryInputWidgetState extends State<PhoneNumberInputWidget> {
           fontWeight: FontWeight.w600,
         ),
         verticalSpace(7),
-        TextFormField(
-          keyboardType: widget.keyBoardType,
-          textInputAction: widget.textInputAction,
-          validator: widget.isValidator == false
-              ? null
-              : (String? value) {
-                  if (value!.isEmpty) {
-                    return Strings.pleaseFillOutTheField;
-                  } else {
-                    return null;
-                  }
+        Directionality(
+          textDirection: TextDirection.ltr,
+          child: TextFormField(
+            initialValue: widget.initVal,
+            keyboardType: widget.keyBoardType,
+            textInputAction: widget.textInputAction,
+            validator: widget.isValidator == false
+                ? null
+                : (String? value) {
+                    if (value!.isEmpty) {
+                      return Strings.pleaseFillOutTheField;
+                    } else {
+                      return null;
+                    }
+                  },
+            controller: widget.controller,
+            onTap: () {
+              setState(
+                () {
+                  focusNode!.requestFocus();
                 },
-          controller: widget.controller,
-          onTap: () {
-            setState(
-              () {
-                focusNode!.requestFocus();
-              },
-            );
-          },
-          onFieldSubmitted: (value) {
-            setState(() {
-              focusNode!.unfocus();
-            });
-          },
-          focusNode: focusNode,
-          textAlign: TextAlign.left,
-          style: CustomStyle.darkHeading4TextStyle.copyWith(
-            color: Get.isDarkMode
-                ? CustomColor.primaryDarkTextColor
-                : CustomColor.primaryTextColor,
-            fontWeight: FontWeight.w600,
-            fontSize: Dimensions.headingTextSize3,
-          ),
-          readOnly: widget.readOnly,
-          maxLines: widget.maxLines,
-          decoration: InputDecoration(
-            hintText: languageController.getTranslation(widget.hint),
-            hintStyle: GoogleFonts.inter(
+              );
+            },
+            onFieldSubmitted: (value) {
+              setState(() {
+                focusNode!.unfocus();
+              });
+            },
+            focusNode: focusNode,
+            textAlign: TextAlign.left,
+            style: CustomStyle.darkHeading4TextStyle.copyWith(
+              color: Get.isDarkMode
+                  ? CustomColor.primaryDarkTextColor
+                  : CustomColor.primaryTextColor,
+              fontWeight: FontWeight.w600,
               fontSize: Dimensions.headingTextSize3,
-              fontWeight: FontWeight.w500,
-              color: CustomColor.primaryTextColor.withOpacity(0.2),
             ),
-            enabledBorder: OutlineInputBorder(
+            readOnly: widget.readOnly,
+            maxLines: widget.maxLines,
+            decoration: InputDecoration(
+              hintText: languageController.getTranslation(widget.hint),
+              hintStyle: GoogleFonts.inter(
+                fontSize: Dimensions.headingTextSize3,
+                fontWeight: FontWeight.w500,
+                color: CustomColor.primaryTextColor.withOpacity(0.2),
+              ),
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(Dimensions.radius * 0.7),
+                  borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor.withOpacity(0.2),
+                  )),
+              focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(Dimensions.radius * 0.7),
-                borderSide: BorderSide(
-                  color: Theme.of(context).primaryColor.withOpacity(0.2),
-                )),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(Dimensions.radius * 0.7),
-              borderSide: const BorderSide(
-                  width: 2, color: CustomColor.primaryTextColor),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(Dimensions.radius * 0.7),
-              borderSide:
-                  const BorderSide(width: 2, color: CustomColor.whiteColor),
-            ),
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: Dimensions.widthSize * 1.7,
-              vertical: Dimensions.heightSize,
-            ),
-            prefixIcon: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: Dimensions.marginSizeHorizontal * 0.5),
-                  child: Obx(
-                    () => TitleHeading3Widget(
-                      text: widget.countryCode.value,
+                borderSide: const BorderSide(
+                    width: 2, color: CustomColor.primaryTextColor),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(Dimensions.radius * 0.7),
+                borderSide:
+                    const BorderSide(width: 2, color: CustomColor.whiteColor),
+              ),
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: Dimensions.widthSize * 1.7,
+                vertical: Dimensions.heightSize,
+              ),
+              prefixIcon: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: Dimensions.marginSizeHorizontal * 0.5),
+                    child: Obx(
+                      () => TitleHeading3Widget(
+                        text: widget.countryCode.value,
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                    width: 1.6,
-                    height: Dimensions.heightSize * 2,
-                    color: CustomColor.primaryTextColor),
-                horizontalSpace(Dimensions.widthSize)
-              ],
+                  Container(
+                      width: 1.6,
+                      height: Dimensions.heightSize * 2,
+                      color: CustomColor.primaryTextColor),
+                  horizontalSpace(Dimensions.widthSize)
+                ],
+              ),
             ),
           ),
         ),

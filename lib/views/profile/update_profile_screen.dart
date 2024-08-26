@@ -86,18 +86,19 @@ class UpdateProfileScreen extends StatelessWidget {
             ],
           ),
           verticalSpace(Dimensions.heightSize),
-          PrimaryInputWidget(
-            controller: controller.emailController,
-            hint: Strings.enterEmailAddress,
-            label: Strings.emailAddress,
-          ),
-          verticalSpace(Dimensions.heightSize),
-          CustomTitleHeadingWidget(
-            text: Strings.country,
-            style: Get.isDarkMode
-                ? CustomStyle.darkHeading4TextStyle
-                : CustomStyle.lightHeading4TextStyle,
-          ),
+          ///-------------Hide email AF
+          //          // PrimaryInputWidget(
+          //   controller: controller.emailController,
+          //   hint: Strings.enterEmailAddress,
+          //   label: Strings.emailAddress,
+          // ),
+          // verticalSpace(Dimensions.heightSize),
+          // CustomTitleHeadingWidget(
+          //   text: Strings.country,
+          //   style: Get.isDarkMode
+          //       ? CustomStyle.darkHeading4TextStyle
+          //       : CustomStyle.lightHeading4TextStyle,
+          // ),
           verticalSpace(Dimensions.heightSize * 0.5),
 ///-----------------------------disable select country
           // ProfileCountryCodePickerWidget(
@@ -108,13 +109,16 @@ class UpdateProfileScreen extends StatelessWidget {
           //   },
           //   controller: controller.countryController,
           // ),
-          PhoneNumberInputWidget(
-            readOnly: true,
-            countryCode: controller.phoneCode,
-            controller: controller.phoneController,
-            hint: Strings.enterPhone,
-            label: Strings.phoneNumber,
-
+          Directionality(
+            textDirection:TextDirection.ltr,
+            child: PhoneNumberInputWidget(
+              readOnly: true,
+              // countryCode: controller.phoneCode, ///--old
+              countryCode: '+2'.obs, ///--new
+              controller: controller.phoneController,
+              hint: Strings.enterPhone,
+              label: Strings.phoneNumber,
+            ),
           ),
 
           //ended country number picker
@@ -150,13 +154,13 @@ class UpdateProfileScreen extends StatelessWidget {
               ),
             ),
             horizontalSpace(Dimensions.widthSize),
-            Expanded(
-              child: PrimaryInputWidget(
-                hint: Strings.enterZipCode,
-                label: Strings.zipCode,
-                controller: controller.zipCodeController,
-              ),
-            ),
+            // Expanded(
+            //   child: PrimaryInputWidget(
+            //     hint: Strings.enterZipCode,
+            //     label: Strings.zipCode,
+            //     controller: controller.zipCodeController,
+            //   ),
+            // ),
           ])
         ],
       ),

@@ -28,6 +28,7 @@ class BasicDataController extends GetxController {
   final lastNameController = TextEditingController();
   final emailController = TextEditingController();
 
+  // final phoneNumberController = TextEditingController();
   final phoneNumberController = TextEditingController();
   final countryCodeController = TextEditingController();
   final countryController = TextEditingController();
@@ -39,12 +40,17 @@ class BasicDataController extends GetxController {
   final backPartController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
+  bool hasError = false;
+  RxString currentText = "".obs;
 
+  changeCurrentText(value) {
+    currentText.value = value;
+  }
   @override
   void dispose() {
     firstNameController.dispose();
     lastNameController.dispose();
-    emailController.dispose();
+    // emailController.dispose();
     phoneNumberController.dispose();
     countryCodeController.dispose();
     cityController.dispose();
@@ -64,7 +70,7 @@ class BasicDataController extends GetxController {
   RxString countryCode = LocalStorages.getCountryCode()!.obs;
   RxString countryName = "".obs;
   RxBool termsAndCondition = false.obs;
-
+  late final String phoneNum;
   List<TextEditingController> inputFieldControllers = [];
   List<String> listImagePath = [];
   List<String> listFieldName = [];
@@ -249,11 +255,13 @@ class BasicDataController extends GetxController {
       'firstname': firstNameController.text,
       'lastname': lastNameController.text,
       // 'email': controller.emailController.text,
-      'phone_code': countryCode.value,
-      'phone': phoneNumberController.text,
-      'country': countryController.text,
+      // 'phone_code': countryCode.value, ///OLD
+      'phone_code':'+2', ///NEW
+      // 'phone': phoneNumberController.text,///OLD
+       'phone': phoneNum,///NEW
+      'country': 'egypt',
       'city': cityController.text,
-      'zip_code': zipCodeController.text,
+      // 'zip_code': zipCodeController.text,
       'password': passwordController.text,
       'password_confirmation': confirmPasswordController.text,
       'agree': isAgree.toString(),

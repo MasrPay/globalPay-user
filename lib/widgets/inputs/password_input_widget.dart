@@ -5,6 +5,8 @@ import 'package:masrpay/utils/basic_screen_imports.dart';
 class PasswordInputWidget extends StatefulWidget {
   final String hint, icon, label;
   final int maxLines;
+  final int ?maxLength;
+  final TextInputType ?keyBoardType;
   final bool isValidator;
   final EdgeInsetsGeometry? paddings;
   final TextEditingController controller;
@@ -16,6 +18,8 @@ class PasswordInputWidget extends StatefulWidget {
     this.icon = "",
     this.isValidator = true,
     this.maxLines = 1,
+    this.maxLength,
+    this.keyBoardType,
     this.paddings,
     required this.label,
   });
@@ -47,13 +51,18 @@ class _PrimaryInputWidgetState extends State<PasswordInputWidget> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TitleHeading4Widget(
-          text: widget.label,
-          fontWeight: FontWeight.w600,
+        Directionality(
+          textDirection: TextDirection.ltr,
+          child: TitleHeading4Widget(
+            text: widget.label,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         verticalSpace(7),
         Obx(
           () => TextFormField(
+            keyboardType: widget.keyBoardType,
+            maxLength: widget.maxLength,
             validator: widget.isValidator == false
                 ? null
                 : (String? value) {

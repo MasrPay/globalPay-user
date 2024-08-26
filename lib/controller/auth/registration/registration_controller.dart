@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:masrpay/backend/model/auth/registation/check_register_user_model.dart';
 import 'package:masrpay/routes/routes.dart';
+import 'package:masrpay/views/auth/kyc_from/kyc_from_screen.dart';
 
 import '../../../backend/local_storage/local_storage.dart';
 import '../../../backend/model/common/common_success_model.dart';
@@ -15,7 +16,8 @@ final log = logger(RegistrationController);
 class RegistrationController extends GetxController {
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
-
+  // int ? phoneNumber;
+  // RegistrationController([this.phoneNumber]);
   @override
   void dispose() {
     emailController.dispose();
@@ -204,7 +206,7 @@ class RegistrationController extends GetxController {
       _isLoading2.value = false;
 
       update();
-      Get.toNamed(Routes.kycFromScreen);
+      Get.to(KycFromScreen(phoneNum: emailController.text,));
     }).catchError((onError) {
       _isLoading2.value = false;
       log.e(onError);

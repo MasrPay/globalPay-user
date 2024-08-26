@@ -179,7 +179,7 @@ class AddRecipientController extends GetxController {
     _isCheckLoading.value = true;
     update();
 
-    Map<String, dynamic> inputBody = {'email': emailController.text};
+    Map<String, dynamic> inputBody = {'phone': emailController.text};
 
     await ApiServices.checkRecipientApi(body: inputBody).then((value) {
       _checkRecipientModel = value!;

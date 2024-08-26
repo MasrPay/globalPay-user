@@ -109,7 +109,7 @@ class MakePaymentController extends GetxController {
   Future<CommonSuccessModel> getMerchantUserExistDate() async {
     _isCheckUserLoading.value = true;
 
-    Map<String, dynamic> inputBody = {'email': copyInputController.text};
+    Map<String, dynamic> inputBody = {'phone': copyInputController.text};
     update();
 
     await ApiServices.checkMerchantExistApi(body: inputBody).then((value) {
@@ -186,7 +186,7 @@ class MakePaymentController extends GetxController {
     _isSendMoneyLoading.value = true;
 
     Map<String, dynamic> inputBody = {
-      'email': copyInputController.text,
+      'phone': copyInputController.text,
       'amount': amountController.text,
     };
     update();

@@ -67,7 +67,6 @@ class ApiEndpoint {
   static String sudoCreateCardURL = '/user/my-card/sudo/create'.addBaseURl();
   static String sudoCardTransactionURL =
       '/user/my-card/transaction?card_id='.addDBaseURl();
-
   static String receiveMoneyURL = '/user/receive-money'.addBaseURl();
   static String sendMoneyInfoURL = '/user/send-money/info'.addBaseURl();
   static String checkUserExistURL = '/user/send-money/exist'.addBaseURl();

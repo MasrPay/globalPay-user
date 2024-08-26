@@ -48,16 +48,24 @@ class PrimaryButton extends StatelessWidget {
             color: borderColor ?? Theme.of(context).primaryColor,
           ),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            icon ?? const SizedBox(),
-            TitleHeading3Widget(
-              text: title,
-              fontWeight: FontWeight.w600,
-              color: CustomColor.whiteColor,
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: FittedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                icon ?? const SizedBox(),
+                Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: TitleHeading3Widget(
+                    text: title,
+                    fontWeight: FontWeight.w600,
+                    color: CustomColor.whiteColor,
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

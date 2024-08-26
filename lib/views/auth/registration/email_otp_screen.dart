@@ -167,7 +167,8 @@ class EmailOtpScreen extends StatelessWidget {
                   onPressed: () {
                     if (emailOtpFormKey.currentState!.validate()) {
                       signupController.verifyEmailProcess(
-                          otpCode: controller.emailOtpInputController.text);
+                          otpCode: controller.emailOtpInputController.text
+                      );
                     } else {
                       CustomSnackBar.error(Strings.theCodeisNotValid.tr);
                     }

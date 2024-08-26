@@ -162,7 +162,7 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
           verticalSpace(Dimensions.heightSize * 0.7),
           PasswordInputWidget(
-
+            maxLength: 6,
             controller: controller.passwordController,
             hint: Strings.password.tr,
             label: Strings.password.tr,
@@ -172,13 +172,16 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
           InkWell(
             onTap: () => _openDialogue(context),
-            child: TitleHeading4Widget(
-              fontWeight: FontWeight.w600,
-              fontSize: Dimensions.headingTextSize5,
-              color: Get.isDarkMode
-                  ? CustomColor.primaryDarkTextColor
-                  : CustomColor.primaryTextColor,
-              text: Strings.forgotPassword.tr,
+            child: Directionality(
+              textDirection: TextDirection.ltr,
+              child: TitleHeading4Widget(
+                fontWeight: FontWeight.w600,
+                fontSize: Dimensions.headingTextSize5,
+                color: Get.isDarkMode
+                    ? CustomColor.primaryDarkTextColor
+                    : CustomColor.primaryTextColor,
+                text: Strings.forgotPassword.tr,
+              ),
             ),
           ),
         ],
@@ -297,7 +300,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     crossAxisAlignment: crossStart,
                     children: [
                       SizedBox(height: Dimensions.heightSize * 2),
-                      TitleHeading2Widget(text: Strings.forgotPassword.tr),
+                      Directionality(textDirection: TextDirection.ltr,child: TitleHeading2Widget(text: Strings.forgotPassword.tr)),
                       verticalSpace(Dimensions.heightSize * 0.5),
                       TitleHeading4Widget(
                           text: Strings.pleaseEnterYourRegister.tr),

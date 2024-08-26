@@ -19,6 +19,8 @@ class CopyInputWidget extends StatefulWidget {
   final int maxLines;
   final bool isValidator;
   final EdgeInsetsGeometry? paddings;
+  final TextInputType? keyboardType;
+  final int? maxLength;
   final TextEditingController controller;
   final VoidCallback? onTap;
   final Color? suffixColor;
@@ -32,7 +34,9 @@ class CopyInputWidget extends StatefulWidget {
     this.icon = "",
     this.isValidator = true,
     this.maxLines = 1,
+    this.maxLength,
     this.paddings,
+    this.keyboardType,
     required this.label,
     this.onTap,
     required this.suffixIcon,
@@ -70,6 +74,8 @@ class _PrimaryInputWidgetState extends State<CopyInputWidget> {
         ),
         verticalSpace(7),
         TextFormField(
+          maxLength: widget.maxLength,
+          keyboardType: widget.keyboardType,
           validator: widget.isValidator == false
               ? null
               : (String? value) {

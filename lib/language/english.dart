@@ -66,7 +66,11 @@ class Strings {
 
 // KYC
   static const String kYCForm = 'kYCForm';
+  static const String register = 'register';
+  static const String registerDetails = 'registerdetails';
   static const String kYCFormDetails = 'kYCFormDetails';
+  static const String registerSuccess = 'registersuccess';
+  static const String goToHome = 'home';
   static const String firstName = 'firstName';
   static const String lastName = 'lastName';
   static const String enterFirstName = 'enterFirstName';
@@ -116,7 +120,7 @@ class Strings {
   static const String signInWith = 'signInWith';
   static const String forgotPasswordd = 'forgotPasswordd';
   static const String newToApp = 'newToApp';
-  static const String enterYourPhoneNumber = 'EnterYourPhoneNumber';
+  static const String enterYourPhoneNumber = 'enterYourPhoneNumber';
   static const String cancel = 'cancel';
   static const String enterPhone = 'enterPhone';
 
@@ -561,7 +565,7 @@ class Strings {
   static const String enterCustomerEmail = "enterCustomerEmail";
   static const String enterDateOfBirth = "mm/day/year";
   static const String dateOfBirth = "dateOfBirth";
-  static const String enterPhoneNumber = "EnterPhoneNumber";
+  static const String enterPhoneNumber = "enterPhoneNumber";
   static const String cardId = "cardId";
   static const String customerId = "customerId";
   static const String houseNumber = "House Number";

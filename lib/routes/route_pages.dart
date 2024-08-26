@@ -118,10 +118,10 @@ class RoutePageList {
       page: () => EmailOtpScreen(),
     ),
 
-    GetPage(
-      name: Routes.kycFromScreen,
-      page: () => KycFromScreen(),
-    ),
+    // GetPage(
+    //   name: Routes.kycFromScreen,
+    //   page: () => KycFromScreen(),
+    // ),
     GetPage(
       name: Routes.waitForApprovalScreen,
       page: () => const WaitForApprovalScreen(),

@@ -16,7 +16,7 @@ class UpdateProfileController extends GetxController {
   final countryController = TextEditingController();
   final phoneController = TextEditingController();
   final cityController = TextEditingController();
-  final zipCodeController = TextEditingController();
+  // final zipCodeController = TextEditingController();
   final imageController = Get.put(ProfileImagePicker());
   final stateController = TextEditingController();
   final addressController = TextEditingController();
@@ -82,7 +82,7 @@ class UpdateProfileController extends GetxController {
       countryController.text = data.address.country;
       phoneController.text = data.mobile;
       cityController.text = data.address.city;
-      zipCodeController.text = data.address.zip;
+      // zipCodeController.text = data.address.zip;
       countryName.value = data.address.country;
       phoneCode.value = data.mobileCode;
       stateController.text = data.address.state;
@@ -119,7 +119,7 @@ class UpdateProfileController extends GetxController {
       'city': cityController.text,
       'state': stateController.text,
       'address': addressController.text,
-      'zip_code': zipCodeController.text,
+      // 'zip_code': zipCodeController.text,
     };
 
     await ApiServices.updateProfileWithoutImageApi(body: inputBody)
@@ -156,7 +156,7 @@ class UpdateProfileController extends GetxController {
       'city': cityController.text,
       'state': stateController.text,
       'address': addressController.text,
-      'zip_code': zipCodeController.text,
+      // 'zip_code': zipCodeController.text,
     };
 
     await ApiServices.updateProfileWithImageApi(

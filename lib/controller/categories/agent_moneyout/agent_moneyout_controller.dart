@@ -86,7 +86,7 @@ class AgentMoneyOutController extends GetxController {
   Future<CommonSuccessModel> getCheckUserExistDate() async {
     _isCheckAgentLoading.value = true;
 
-    Map<String, dynamic> inputBody = {'email': copyInputController.text};
+    Map<String, dynamic> inputBody = {'phone': copyInputController.text};
     update();
     await ApiServices.checkAgentExistApi(body: inputBody).then((value) {
       _checkAgentExistModel = value!;
@@ -148,7 +148,7 @@ class AgentMoneyOutController extends GetxController {
     _isSendMoneyLoading.value = true;
 
     Map<String, dynamic> inputBody = {
-      'email': copyInputController.text,
+      'phone': copyInputController.text,
       'amount': amountController.text,
     };
     update();

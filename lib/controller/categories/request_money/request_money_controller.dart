@@ -102,7 +102,7 @@ class RequestMoneyController extends GetxController
   CommonSuccessModel get checkUserExistModel => _checkUserExistModel;
   Future<CommonSuccessModel> getCheckUserExist() async {
     _isCheckUserLoading.value = true;
-    Map<String, dynamic> inputBody = {'email': copyInputController.text};
+    Map<String, dynamic> inputBody = {'phone': copyInputController.text};
     update();
 
     await checkUserExistApi(body: inputBody).then((value) {
@@ -127,7 +127,7 @@ class RequestMoneyController extends GetxController
     _isRequestMoneyLoading.value = true;
 
     Map<String, dynamic> inputBody = {
-      'email': copyInputController.text,
+      'phone': copyInputController.text,
       'request_amount': amountController.text,
       'currency': baseCurrency.value,
       'remark': remarkController.text
