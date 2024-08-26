@@ -1,9 +1,7 @@
 // ignore_for_file: unnecessary_to_list_in_spreads
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/services/notification_service.dart';
 import 'package:masrpay/backend/utils/custom_loading_api.dart';
 import 'package:masrpay/utils/dimensions.dart';
 import 'package:masrpay/utils/responsive_layout.dart';
@@ -12,45 +10,14 @@ import 'package:masrpay/widgets/buttons/primary_button.dart';
 import 'package:masrpay/widgets/inputs/password_input_widget.dart';
 import 'package:masrpay/widgets/inputs/phone_number_with_contry_code_input.dart';
 import 'package:masrpay/widgets/inputs/primary_input_filed.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
-
 import '../../../controller/auth/registration/kyc_form_controller.dart';
 import '../../../controller/auth/registration/otp_email_controoler.dart';
 import '../../../controller/auth/registration/registration_controller.dart';
 import '../../../language/english.dart';
 import '../../../routes/routes.dart';
-import '../../../utils/custom_color.dart';
 import '../../../utils/size.dart';
-import '../../../widgets/inputs/country_with_country_code_input_widget.dart';
 import '../../../widgets/text_labels/title_heading2_widget.dart';
 import '../../../widgets/text_labels/title_heading4_widget.dart';
-// ignore_for_file: unnecessary_to_list_in_spreads
-import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:masrpay/backend/services/notification_service.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/back_button.dart';
-import 'package:masrpay/widgets/buttons/primary_button.dart';
-import 'package:masrpay/widgets/inputs/password_input_widget.dart';
-import 'package:masrpay/widgets/inputs/phone_number_with_contry_code_input.dart';
-import 'package:masrpay/widgets/inputs/primary_input_filed.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
-
-import '../../../controller/auth/registration/kyc_form_controller.dart';
-import '../../../controller/auth/registration/otp_email_controoler.dart';
-import '../../../controller/auth/registration/registration_controller.dart';
-import '../../../language/english.dart';
-import '../../../routes/routes.dart';
-import '../../../utils/custom_color.dart';
-import '../../../utils/size.dart';
-import '../../../widgets/inputs/country_with_country_code_input_widget.dart';
-import '../../../widgets/text_labels/title_heading2_widget.dart';
-import '../../../widgets/text_labels/title_heading4_widget.dart';
-
 class KycFromScreen extends StatelessWidget {
   KycFromScreen({super.key,required this.phoneNum});
   final String phoneNum;
