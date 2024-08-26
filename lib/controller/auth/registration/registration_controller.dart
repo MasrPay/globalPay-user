@@ -204,8 +204,8 @@ class RegistrationController extends GetxController {
     await ApiServices.verifyRegisterEmailApi(body: inputBody).then((value) {
       _verifyEmailModel = value!;
       _isLoading2.value = false;
-
       update();
+      print(emailController.text.toString()+"GGGGG");
       Get.to(KycFromScreen(phoneNum: emailController.text,));
     }).catchError((onError) {
       _isLoading2.value = false;

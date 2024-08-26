@@ -70,7 +70,7 @@ class BasicDataController extends GetxController {
   RxString countryCode = LocalStorages.getCountryCode()!.obs;
   RxString countryName = "".obs;
   RxBool termsAndCondition = false.obs;
-  late final String phoneNum;
+  late  String phoneNum;
   List<TextEditingController> inputFieldControllers = [];
   List<String> listImagePath = [];
   List<String> listFieldName = [];

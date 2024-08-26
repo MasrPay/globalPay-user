@@ -24,46 +24,44 @@ import '../../../utils/size.dart';
 import '../../../widgets/inputs/country_with_country_code_input_widget.dart';
 import '../../../widgets/text_labels/title_heading2_widget.dart';
 import '../../../widgets/text_labels/title_heading4_widget.dart';
+// ignore_for_file: unnecessary_to_list_in_spreads
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:masrpay/backend/services/notification_service.dart';
+import 'package:masrpay/backend/utils/custom_loading_api.dart';
+import 'package:masrpay/utils/dimensions.dart';
+import 'package:masrpay/utils/responsive_layout.dart';
+import 'package:masrpay/widgets/appbar/back_button.dart';
+import 'package:masrpay/widgets/buttons/primary_button.dart';
+import 'package:masrpay/widgets/inputs/password_input_widget.dart';
+import 'package:masrpay/widgets/inputs/phone_number_with_contry_code_input.dart';
+import 'package:masrpay/widgets/inputs/primary_input_filed.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
-class KycFromScreen extends StatefulWidget {
+import '../../../controller/auth/registration/kyc_form_controller.dart';
+import '../../../controller/auth/registration/otp_email_controoler.dart';
+import '../../../controller/auth/registration/registration_controller.dart';
+import '../../../language/english.dart';
+import '../../../routes/routes.dart';
+import '../../../utils/custom_color.dart';
+import '../../../utils/size.dart';
+import '../../../widgets/inputs/country_with_country_code_input_widget.dart';
+import '../../../widgets/text_labels/title_heading2_widget.dart';
+import '../../../widgets/text_labels/title_heading4_widget.dart';
+
+class KycFromScreen extends StatelessWidget {
+  KycFromScreen({super.key,required this.phoneNum});
   final String phoneNum;
-
-  KycFromScreen({Key? key, required this.phoneNum}) : super(key: key);
-
-  @override
-  _KycFromScreenState createState() => _KycFromScreenState();
-}
-
-class _KycFromScreenState extends State<KycFromScreen> {
   final emailController = Get.put(EmailOtpController());
   final registrationController = Get.put(RegistrationController());
   final kycController = Get.put(BasicDataController());
-  final _formKey = GlobalKey<FormState>();
+  final _forkKey = GlobalKey<FormState>();
 
   @override
-  void dispose() {
-    // Dispose of the controllers when the widget is removed from the tree
-    emailController.dispose();
-    registrationController.dispose();
-    kycController.dispose();
 
-    super.dispose();  // Always call super.dispose() at the end
-  }
-
-  @override
   Widget build(BuildContext context) {
-    // Ensure phoneNum is passed correctly
-    if (widget.phoneNum.isEmpty) {
-      return Scaffold(
-        body: Center(child: Text('Phone number is missing')),
-      );
-    }
-
-    // Initialize phoneNum in the controller if it's not already initialized
-    if (kycController.phoneNum == null || kycController.phoneNum!.isEmpty) {
-      kycController.phoneNum = widget.phoneNum;
-    }
-
     return ResponsiveLayout(
       mobileScaffold: PopScope(
         canPop: true,
@@ -91,7 +89,6 @@ class _KycFromScreenState extends State<KycFromScreen> {
       ),
     );
   }
-
   _bodyWidget(BuildContext context) {
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: Dimensions.paddingSize),
@@ -103,7 +100,6 @@ class _KycFromScreenState extends State<KycFromScreen> {
       ],
     );
   }
-
   _titleAndSubtitleWidget(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
@@ -120,10 +116,9 @@ class _KycFromScreenState extends State<KycFromScreen> {
       ),
     );
   }
-
   _inputWidget(BuildContext context) {
     return Form(
-      key: _formKey,
+      key: _forkKey,
       child: Column(
         crossAxisAlignment: crossStart,
         children: [
@@ -147,15 +142,35 @@ class _KycFromScreenState extends State<KycFromScreen> {
             ],
           ),
           verticalSpace(Dimensions.heightSize),
+          // PrimaryInputWidget(
+          //   readOnly: true,
+          //   controller: registrationController.emailController,
+          //   hint: Strings.enterEmailAddress.tr,
+          //   label: Strings.emailAddress.tr,
+          //   keyboardType: TextInputType.emailAddress,
+          // ),
+          // verticalSpace(Dimensions.heightSize),
+          ///---------------Country Comm
+          /* CountryInputWidget(
+            countryCode: kycController.countryCode,
+            readOnly: true,
+            controller: kycController.countryController,
+            hint: Strings.country.tr,
+            label: Strings.country.tr,
+          ),*/
+          verticalSpace(Dimensions.heightSize * 0.6),
           PhoneNumberInputWidget(
             readOnly: true,
-            initVal: widget.phoneNum,
-            countryCode: '02'.obs, // New fixed country code
+            initVal: phoneNum,
+            // countryCode: kycController.countryCode,///old
+            countryCode: '02'.obs, ///New
+            // controller: kycController.phoneNumberController,///old
             hint: Strings.xxx.tr,
             label: Strings.phoneNumber.tr,
             keyBoardType: TextInputType.number,
           ),
           verticalSpace(Dimensions.heightSize * 0.6),
+          //!row widget
           Row(
             children: [
               Expanded(
@@ -165,9 +180,57 @@ class _KycFromScreenState extends State<KycFromScreen> {
                   controller: kycController.cityController,
                 ),
               ),
+              horizontalSpace(Dimensions.widthSize),
+              ///------ZIP CODE Comment
+              // Expanded(
+              //   child: PrimaryInputWidget(
+              //     keyboardType: TextInputType.text,
+              //     hint: Strings.enterZipCode.tr,
+              //     label: Strings.zipCode.tr,
+              //     controller: kycController.zipCodeController,
+              //   ),
+              // ),
             ],
           ),
-          verticalSpace(Dimensions.heightSize),
+
+          Visibility(
+            visible: kycController.inputFileFields.isNotEmpty,
+            child: Container(
+              margin: EdgeInsets.only(
+                top: Dimensions.marginSizeVertical * 0.5,
+              ),
+              height: kycController.inputFileFields.length == 2
+                  ? MediaQuery.of(context).size.height * 0.20
+                  : MediaQuery.of(context).size.height * 0.25,
+              child: GridView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, // Number of columns in the grid
+                    crossAxisSpacing: 10.0, // Spacing between columns
+                    mainAxisSpacing: 10.0, // Spacing between rows
+                  ),
+                  itemCount: kycController.inputFileFields.length,
+                  // Number of items in the grid
+                  itemBuilder: (BuildContext context, int index) {
+                    return kycController.inputFileFields[index];
+                  }),
+            ),
+          ),
+          Obx(() {
+            return Column(
+              children: [
+                ...kycController.inputFields.map((element) {
+                  return element;
+                }).toList(),
+                verticalSpace(Dimensions.heightSize * 0.5),
+              ],
+            );
+          }),
+
+          horizontalSpace(Dimensions.widthSize),
+
+          //! password input widgets
+          ///--------------OLD -------------------------
           PasswordInputWidget(
             keyBoardType: TextInputType.number,
             maxLength: 6,
@@ -175,6 +238,48 @@ class _KycFromScreenState extends State<KycFromScreen> {
             hint: Strings.enterPassword.tr,
             label: Strings.newPassword.tr,
           ),
+          // TitleHeading4Widget(
+          //   text: Strings.newPassword.tr,
+          //   fontWeight: FontWeight.w600,
+          // ),
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //     top: Dimensions.heightSize * 2,
+          //   ),
+          //   child: PinCodeTextField(
+          //     errorTextSpace: Dimensions.heightSize * 2,
+          //     cursorColor: Theme.of(context).primaryColor,
+          //     controller:  kycController.passwordController,
+          //     appContext: context,
+          //     length: 6,
+          //     obscureText: false,
+          //     keyboardType: TextInputType.number,
+          //     textStyle: TextStyle(color: Theme.of(context).primaryColor),
+          //     animationType: AnimationType.fade,
+          //     validator: (v) {
+          //       if (v!.length < 6) {
+          //         return Strings.pleaseFillOutTheField.translation;
+          //       } else {
+          //         return null;
+          //       }
+          //     },
+          //     pinTheme: PinTheme(
+          //         shape: PinCodeFieldShape.box,
+          //         borderRadius: BorderRadius.circular(Dimensions.radius * 0.7),
+          //         selectedColor: Theme.of(context).primaryColor,
+          //         activeColor: Theme.of(context).primaryColor,
+          //         inactiveColor: CustomColor.blackColor,
+          //         fieldHeight: 50,
+          //         fieldWidth: 48,
+          //         errorBorderColor: CustomColor.redColor,
+          //         activeFillColor: CustomColor.transparent,
+          //         borderWidth: 2,
+          //         fieldOuterPadding: const EdgeInsets.all(1)),
+          //     onChanged: (value) {
+          //       kycController.changeCurrentText(value);
+          //     },
+          //   ),
+          // ),
           verticalSpace(Dimensions.heightSize),
           PasswordInputWidget(
             keyBoardType: TextInputType.number,
@@ -183,6 +288,49 @@ class _KycFromScreenState extends State<KycFromScreen> {
             hint: Strings.enterConfirmPassword.tr,
             label: Strings.confirmPassword.tr,
           ),
+          /* TitleHeading4Widget(
+            text: Strings.confirmPassword.tr,
+            fontWeight: FontWeight.w600,
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: Dimensions.heightSize * 2,
+            ),
+            child: PinCodeTextField(
+              errorTextSpace: Dimensions.heightSize * 1,
+              cursorColor: Theme.of(context).primaryColor,
+              controller:  kycController.confirmPasswordController,
+              appContext: context,
+              length: 6,
+              obscureText: false,
+              keyboardType: TextInputType.number,
+              textStyle: TextStyle(color: Theme.of(context).primaryColor),
+              animationType: AnimationType.fade,
+              validator: (v) {
+                if (v!.length < 6) {
+                  return Strings.pleaseFillOutTheField.translation;
+                } else {
+                  return null;
+                }
+              },
+              pinTheme: PinTheme(
+                  shape: PinCodeFieldShape.box,
+                  borderRadius: BorderRadius.circular(Dimensions.radius * 0.7),
+                  selectedColor: Theme.of(context).primaryColor,
+                  activeColor: Theme.of(context).primaryColor,
+                  inactiveColor: CustomColor.blackColor,
+                  fieldHeight: 50,
+                  fieldWidth: 48,
+                  errorBorderColor: CustomColor.redColor,
+                  activeFillColor: CustomColor.transparent,
+                  borderWidth: 2,
+                  fieldOuterPadding: const EdgeInsets.all(1)),
+              onChanged: (value) {
+                kycController.changeCurrentText(value);
+              },
+            ),
+          ),
+*/
           FittedBox(
             child: Row(
               children: [
@@ -191,20 +339,24 @@ class _KycFromScreenState extends State<KycFromScreen> {
                     width: 20,
                     child: Checkbox(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(Dimensions.radius * 0.3),
+                        borderRadius:
+                        BorderRadius.circular(Dimensions.radius * 0.3),
                       ),
-                      fillColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                      fillColor: MaterialStateProperty.all(
+                          Theme.of(context).primaryColor),
                       value: kycController.termsAndCondition.value,
                       onChanged: kycController.termsAndCondition.call,
                       side: MaterialStateBorderSide.resolveWith(
                             (states) => BorderSide(
                           width: 1.4,
-                          color: Theme.of(context).primaryColor.withOpacity(0.2),
+                          color:
+                          Theme.of(context).primaryColor.withOpacity(0.2),
                         ),
                       ),
                     ),
                   ),
                 ),
+
                 TextButton(
                   onPressed: () async {
                     const url = 'https://stgapp.masrpay.com/page/terms-and-conditions';
@@ -223,28 +375,31 @@ class _KycFromScreenState extends State<KycFromScreen> {
                 )
               ],
             ),
-          ),
+          )
         ],
       ),
     );
   }
-
   _buttonWidget(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: Dimensions.marginSizeVertical * 1.4),
+      margin:
+      EdgeInsets.symmetric(vertical: Dimensions.marginSizeVertical * 1.4),
       child: Obx(
             () => kycController.isLoading
             ? const CustomLoadingAPI()
             : PrimaryButton(
           title: Strings.continuee.tr,
-          onPressed: () {
-            if (_formKey.currentState!.validate()) {
+          onPressed: (){
+            if (_forkKey.currentState!.validate()){
+              kycController.phoneNum = phoneNum;
               kycController.registrationProcess();
+
             }
           },
         ),
       ),
     );
   }
+
 }
 
