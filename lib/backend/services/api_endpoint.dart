@@ -70,8 +70,7 @@ class ApiEndpoint {
   static String receiveMoneyURL = '/user/receive-money'.addBaseURl();
   static String sendMoneyInfoURL = '/user/send-money/info'.addBaseURl();
   static String checkUserExistURL = '/user/send-money/exist'.addBaseURl();
-  static String checkUserWithQeCodeURL =
-      '/user/send-money/qr/scan'.addBaseURl();
+  static String checkUserWithQeCodeURL = '/user/send-money/qr/scan'.addBaseURl();
   static String sendMoneyURL = '/user/send-money/confirmed'.addBaseURl();
 
   // money_out

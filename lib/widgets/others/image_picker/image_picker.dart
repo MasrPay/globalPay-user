@@ -63,15 +63,14 @@ class ImagePickerWidget extends StatelessWidget {
                     height: Dimensions.heightSize * 8.3,
                     width: Dimensions.widthSize * 11.5,
                     decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(Dimensions.radius * 1.5),
+                        borderRadius: BorderRadius.circular(Dimensions.radius * 1.5),
                         color: Theme.of(context).primaryColor,
-                        border: Border.all(
-                            color: Theme.of(context).primaryColor, width: 5),
+                        border: Border.all(color: Theme.of(context).primaryColor, width: 5),
                         image: DecorationImage(
                             image: FileImage(
                               File(
                                 imgController.imagePath.value,
+
                               ),
                             ),
                             fit: BoxFit.cover)),

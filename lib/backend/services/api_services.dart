@@ -306,7 +306,6 @@ class ApiServices {
     }
     return null;
   }
-
   // basic data get
   static Future<BasicDataModel?> basicData() async {
     Map<String, dynamic>? mapResponse;
@@ -327,7 +326,6 @@ class ApiServices {
     }
     return null;
   }
-
   // registration with kyc
   static Future<RegistrationWithKycModel?> registrationApi({
     required Map<String, String> body,
@@ -765,7 +763,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -788,7 +787,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card details api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -813,7 +813,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card block api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -838,7 +839,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card unblock api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -864,7 +866,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card add fund  api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -889,7 +892,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card add fund  api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -914,7 +918,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card transaction api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -943,7 +948,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from receive money api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -972,7 +978,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send money info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -997,7 +1004,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from check user exist api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1023,7 +1031,8 @@ class ApiServices {
     } catch (e) {
       log.e(
           '🐞🐞🐞 err from check user with qr code api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1048,7 +1057,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send money api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1614,7 +1624,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send money info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1639,7 +1650,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from check user exist api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1665,7 +1677,8 @@ class ApiServices {
     } catch (e) {
       log.e(
           '🐞🐞🐞 err from check user with qr code api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1690,7 +1703,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send money api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1714,7 +1728,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send money api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1782,13 +1797,12 @@ class ApiServices {
       );
       if (mapResponse != null) {
         CommonSuccessModel checkUserModel =
-        CommonSuccessModel.fromJson(mapResponse);
+            CommonSuccessModel.fromJson(mapResponse);
         CustomSnackBar.success(checkUserModel.message.success.first.toString());
         return checkUserModel;
-      }else{
-
+      } else {
         CommonSuccessModel checkUserModel =
-        CommonSuccessModel.fromJson(mapResponse!);
+            CommonSuccessModel.fromJson(mapResponse!);
         print("${checkUserModel.message}GHGHGH");
       }
     } catch (e) {
@@ -1896,7 +1910,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card block api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1921,7 +1936,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card unblock api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
       return null;
     }
     return null;
@@ -1941,7 +1957,6 @@ class ApiServices {
       if (mapResponse != null) {
         CommonSuccessModel cardUnBlockModel =
             CommonSuccessModel.fromJson(mapResponse);
-
         return cardUnBlockModel;
       }
     } catch (e) {
@@ -2306,8 +2321,7 @@ class ApiServices {
   }
 
   // check user api
-  static Future<CheckAgentWithQrCodeModel?> checkAgentWithQrCodeApi(
-      {required Map<String, dynamic> body}) async {
+  static Future<CheckAgentWithQrCodeModel?> checkAgentWithQrCodeApi({required Map<String, dynamic> body})async{
     Map<String, dynamic>? mapResponse;
     try {
       mapResponse = await ApiMethod(isBasic: false).post(
@@ -2330,7 +2344,6 @@ class ApiServices {
     }
     return null;
   }
-
   // check user api
   static Future<CommonSuccessModel?> agentMoneyOutConfirmApi(
       {required Map<String, dynamic> body}) async {

@@ -176,7 +176,6 @@ class SignInController extends GetxController {
   Future<CommonSuccessModel?> sendForgotOTPEmailProcess() async {
     _isSendForgotOTPLoading.value = true;
     update();
-
     Map<String, dynamic> inputBody = {'phone': emailForgotController.text};
     try {
       final value = await ApiServices.sendForgotOTPEmailApi(body: inputBody);

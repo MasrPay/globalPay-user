@@ -14,6 +14,7 @@ import 'utils/theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
+  // debugRepaintRainbowEnabled = true;
   // Locking Device Orientation
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

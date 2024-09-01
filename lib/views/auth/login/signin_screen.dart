@@ -317,7 +317,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       verticalSpace(Dimensions.heightSize * 0.5),
                       Obx(
-                        () => controller.isLoading2
+                        () => controller.isSendForgotOTPLoading
                             ? const CustomLoadingAPI()
                             : PrimaryButton(
                                 title: Strings.forgotPassword.tr,
