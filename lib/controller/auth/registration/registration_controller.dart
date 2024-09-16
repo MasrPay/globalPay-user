@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/model/auth/registation/check_register_user_model.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/views/auth/kyc_from/kyc_from_screen.dart';
+import 'package:globalpay/backend/model/auth/registation/check_register_user_model.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/views/auth/kyc_from/kyc_from_screen.dart';
 
 import '../../../backend/local_storage/local_storage.dart';
 import '../../../backend/model/common/common_success_model.dart';
@@ -205,7 +205,7 @@ class RegistrationController extends GetxController {
       _verifyEmailModel = value!;
       _isLoading2.value = false;
       update();
-      print(emailController.text.toString()+"GGGGG");
+      // print(emailController.text.toString()+"GGGGG");
       Get.to(KycFromScreen(phoneNum: emailController.text,));
     }).catchError((onError) {
       _isLoading2.value = false;

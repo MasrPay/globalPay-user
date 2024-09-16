@@ -25,7 +25,7 @@ class Themes {
     scaffoldBackgroundColor: CustomColor.primaryLightScaffoldBackgroundColor,
     brightness: Brightness.light,
     textTheme: ThemeData.dark().textTheme.apply(
-        fontFamily: GoogleFonts.josefinSans().fontFamily,
+        fontFamily: GoogleFonts.cairo().fontFamily,
         bodyColor: Colors.black),
   );
   static ThemeData dark = ThemeData.dark().copyWith(
@@ -33,7 +33,7 @@ class Themes {
     scaffoldBackgroundColor: CustomColor.primaryDarkScaffoldBackgroundColor,
     brightness: Brightness.dark,
     textTheme: ThemeData.dark().textTheme.apply(
-        fontFamily: GoogleFonts.josefinSans().fontFamily,
+        fontFamily: GoogleFonts.cairo().fontFamily,
         bodyColor: Colors.black),
   );
 

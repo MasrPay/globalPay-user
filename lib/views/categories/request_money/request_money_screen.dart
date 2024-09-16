@@ -1,9 +1,9 @@
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/custom_assets/assets.gen.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/custom_assets/assets.gen.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
 
 import '../../../controller/categories/request_money/request_money_controller.dart';
 import '../../../widgets/inputs/request_money_input.dart';

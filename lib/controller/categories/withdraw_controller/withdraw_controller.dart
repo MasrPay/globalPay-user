@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/model/categories/withdraw/flutterwave_account_cheack_model.dart';
-import 'package:masrpay/backend/utils/custom_snackbar.dart';
+import 'package:globalpay/backend/model/categories/withdraw/flutterwave_account_cheack_model.dart';
+import 'package:globalpay/backend/utils/custom_snackbar.dart';
 
 import '../../../backend/model/categories/withdraw/flutter_wave_banks_model.dart';
 import '../../../backend/model/categories/withdraw/money_out_manual_insert_model.dart';

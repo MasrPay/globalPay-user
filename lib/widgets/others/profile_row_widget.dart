@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/size.dart';
-import 'package:masrpay/views/others/custom_image_widget.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/size.dart';
+import 'package:globalpay/views/others/custom_image_widget.dart';
 
 import '../text_labels/title_heading3_widget.dart';
 

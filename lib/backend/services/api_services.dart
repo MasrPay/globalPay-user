@@ -1,12 +1,12 @@
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
-import 'package:masrpay/backend/model/add_money/add_money_ssl_insert_model.dart';
-import 'package:masrpay/backend/model/auth/login/reset_password.dart';
-import 'package:masrpay/backend/model/auth/registation/basic_data_model.dart';
-import 'package:masrpay/backend/model/categories/receive_money/receive_money_model.dart';
-import 'package:masrpay/backend/model/categories/send_money/send_money_info_model.dart';
-import 'package:masrpay/backend/model/categories/virtual_card/virtual_card_flutter_wave/card_info_model.dart';
-import 'package:masrpay/backend/model/recipient_models/check_recipient_model.dart';
+import 'package:globalpay/backend/model/add_money/add_money_ssl_insert_model.dart';
+import 'package:globalpay/backend/model/auth/login/reset_password.dart';
+import 'package:globalpay/backend/model/auth/registation/basic_data_model.dart';
+import 'package:globalpay/backend/model/categories/receive_money/receive_money_model.dart';
+import 'package:globalpay/backend/model/categories/send_money/send_money_info_model.dart';
+import 'package:globalpay/backend/model/categories/virtual_card/virtual_card_flutter_wave/card_info_model.dart';
+import 'package:globalpay/backend/model/recipient_models/check_recipient_model.dart';
 
 import '../model/add_money/add_money_pagadito_insert_model.dart';
 import '../model/add_money/add_money_payment_gateway_model.dart';
@@ -81,7 +81,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from App Settings API service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in App Settings Model');
+      // CustomSnackBar.error('Something went Wrong! in App Settings Model');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -104,7 +105,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from login api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in LoginModel');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in LoginModel');
       return null;
     }
     return null;
@@ -125,7 +127,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from log out api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in logout model');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in logout model');
       return null;
     }
     return null;
@@ -149,7 +152,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send otp email service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in check  checkUserModel');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in check  checkUserModel');
       return null;
     }
     return null;
@@ -174,8 +178,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send otp email service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error(
-          'Something went Wrong! in verify Email  checkUserModel');
+      // CustomSnackBar.error('Something went Wrong! in verify Email  checkUserModel');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -201,7 +205,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from check register user service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in check register user');
+      // CustomSnackBar.error('Something went Wrong! in check register user');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -226,7 +231,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from reset Password api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in Reset');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in Reset');
       return null;
     }
     return null;
@@ -252,7 +258,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send register otp email service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in check  checkUserModel');
+      // CustomSnackBar.error('Something went Wrong! in check  checkUserModel');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -275,7 +282,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from check user  service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in check  user model');
+      // CustomSnackBar.error('Something went Wrong! in check  user model');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -300,12 +308,13 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send otp email service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error(
-          'Something went Wrong! in verify Email  checkUserModel');
+      CustomSnackBar.error(e.toString());
+      CustomSnackBar.error('Something went Wrong! in verify Email  checkUserModel');
       return null;
     }
     return null;
   }
+
   // basic data get
   static Future<BasicDataModel?> basicData() async {
     Map<String, dynamic>? mapResponse;
@@ -350,7 +359,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from registration api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in registration Model');
+      // CustomSnackBar.error('Something went Wrong! in registration Model');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -370,7 +380,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from Dashboard Api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in Dashboard Api');
+      // CustomSnackBar.error('Something went Wrong! in Dashboard Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -392,7 +403,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from all recipient info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in all recipient info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in all recipient info Api');
       return null;
     }
     return null;
@@ -414,7 +426,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from profile Api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in profile Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in profile Api');
       return null;
     }
     return null;
@@ -442,7 +455,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from update profile api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -466,7 +480,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from profile update api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -493,7 +508,8 @@ class ApiServices {
     } catch (e) {
       log.e(
           '🐞🐞🐞 err from Add Money Payment Gateway api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in add money info Api');
+      // CustomSnackBar.error('Something went Wrong! in add money info Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -514,7 +530,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from update password api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -537,7 +554,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from send money paypal api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -559,7 +577,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from send money flutter wave api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -579,7 +598,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from add money coinGate api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -600,7 +620,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from add money insert ssl api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -621,7 +642,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from Add Money Insert RazorPay api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -643,7 +665,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from send money Stripe api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -665,7 +688,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from send money Stripe api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -687,7 +711,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from send money manual api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -714,7 +739,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from manual payment Confirm api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -735,7 +761,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from Add Money Insert Pagadito api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1082,7 +1109,8 @@ class ApiServices {
     } catch (e) {
       log.e(
           '🐞🐞🐞 err from Money Out Payment Gateway api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in money out info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in money out info Api');
       return null;
     }
     return null;
@@ -1107,8 +1135,10 @@ class ApiServices {
     } catch (e) {
       log.e(
           '🐞🐞🐞 err from get flutter wave banks list api service ==> $e 🐞🐞🐞');
+      // CustomSnackBar.error(
+      //     'Something went Wrong! in Flutter wave banks list Api');
       CustomSnackBar.error(
-          'Something went Wrong! in Flutter wave banks list Api');
+          e.toString());
       return null;
     }
     return null;
@@ -1131,6 +1161,7 @@ class ApiServices {
     } catch (e) {
       log.e('err from money out manual api service ==> $e');
       CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1153,7 +1184,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from money out manual api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1175,7 +1207,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from money out manual api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -1197,7 +1230,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from money out manual api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -1222,7 +1256,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from manual payment money out Confirm api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -1244,7 +1279,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from bill pay info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in bill pay info Api');
+      // CustomSnackBar.error('Something went Wrong! in bill pay info Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1264,7 +1300,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from bill pay conf api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1286,7 +1323,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from Topup Payment Gateway api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in Topup info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in Topup info Api');
       return null;
     }
     return null;
@@ -1306,7 +1344,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from top oup api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -1328,7 +1367,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from all recipient info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in all recipient info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in all recipient info Api');
       return null;
     }
     return null;
@@ -1350,7 +1390,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from all recipient info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in all recipient info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in all recipient info Api');
       return null;
     }
     return null;
@@ -1372,7 +1413,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from all recipient info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in all recipient info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in all recipient info Api');
       return null;
     }
     return null;
@@ -1391,7 +1433,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from recipient stor api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -1410,7 +1453,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from recipient stor api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -1429,7 +1473,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from recipient stor api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -1451,7 +1496,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from all recipient info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in all recipient info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in all recipient info Api');
       return null;
     }
     return null;
@@ -1474,7 +1520,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from all recipient info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in all recipient info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in all recipient info Api');
       return null;
     }
     return null;
@@ -1493,7 +1540,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from recipient stor api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1513,7 +1561,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('err from recipient stor api service ==> $e');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1537,7 +1586,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from all recipient info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in all recipient info Api');
+      // CustomSnackBar.error('Something went Wrong! in all recipient info Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1558,7 +1608,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from update kyc data Api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in basic data Api');
+      // CustomSnackBar.error('Something went Wrong! in basic data Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1581,7 +1632,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from twofa api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in twofa info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in twofa info Api');
       return null;
     }
     return null;
@@ -1753,7 +1805,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from delete account service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in delete account ');
+      // CustomSnackBar.error('Something went Wrong! in delete account ');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1779,7 +1832,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from check recipient user service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in check recipient user');
+      // CustomSnackBar.error('Something went Wrong! in check recipient user');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -1807,7 +1861,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send otp email service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in check  checkUserModel');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in check  checkUserModel');
       return null;
     }
     return null;
@@ -1832,7 +1887,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from send otp email service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in verify forgot email ');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in verify forgot email ');
       return null;
     }
     return null;
@@ -1861,7 +1917,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from sudo card info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in sudo card info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in sudo card info Api');
       return null;
     }
     return null;
@@ -1885,7 +1942,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card details api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in card details info Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in card details info Api');
       return null;
     }
     return null;
@@ -1962,8 +2020,10 @@ class ApiServices {
     } catch (e) {
       log.e(
           '🐞🐞🐞 err from card sudo Card Make Or Remove Default Api api service ==> $e 🐞🐞🐞');
+      // CustomSnackBar.error(
+      //     'Something went Wrong! in sudo Card Make Or Remove Default Api info Api');
       CustomSnackBar.error(
-          'Something went Wrong! in sudo Card Make Or Remove Default Api info Api');
+          e.toString());
       return null;
     }
     return null;
@@ -1988,7 +2048,8 @@ class ApiServices {
     } catch (e) {
       log.e(
           '🐞🐞🐞 err from card flutter wave Card Make Or Remove Default Api api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -2013,7 +2074,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from card create card  api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in create card info Api');
+      // CustomSnackBar.error('Something went Wrong! in create card info Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -2043,7 +2105,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from update kyc api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in update kyc Model');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in update kyc Model');
       return null;
     }
     return null;
@@ -2071,7 +2134,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from stripe card info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in stripe card info Api');
+      // CustomSnackBar.error('Something went Wrong! in stripe card info Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -2094,8 +2158,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from stripe card details api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error(
-          'Something went Wrong! in stripe card details info Api');
+      // CustomSnackBar.error('Something went Wrong! in stripe card details info Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -2120,7 +2184,8 @@ class ApiServices {
     } catch (e) {
       log.e(
           '🐞🐞🐞 err from my stripe Card Transaction Api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -2145,7 +2210,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from stripe sensitive api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in stripe sensitive Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! in stripe sensitive Api');
       return null;
     }
     return null;
@@ -2170,7 +2236,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from inactive api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! inactive Api');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! inactive Api');
       return null;
     }
     return null;
@@ -2195,8 +2262,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from stripe card active Api api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error(
-          'Something went Wrong! in stripe card active  Api info Api');
+      // CustomSnackBar.error('Something went Wrong! in stripe card active  Api info Api');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -2220,7 +2287,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from stripe card buy api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! in stripe card buy Model');
+      // CustomSnackBar.error('Something went Wrong! in stripe card buy Model');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -2246,7 +2314,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from tatum api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -2289,7 +2358,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from agent money out info api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong!');
       return null;
     }
     return null;
@@ -2314,7 +2384,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from check agent exist api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong!');
+      // CustomSnackBar.error('Something went Wrong!');
+      CustomSnackBar.error(e.toString());
       return null;
     }
     return null;
@@ -2363,7 +2434,8 @@ class ApiServices {
       }
     } catch (e) {
       log.e('🐞🐞🐞 err from agent money out api service ==> $e 🐞🐞🐞');
-      CustomSnackBar.error('Something went Wrong! ');
+      CustomSnackBar.error(e.toString());
+      // CustomSnackBar.error('Something went Wrong! ');
       return null;
     }
     return null;

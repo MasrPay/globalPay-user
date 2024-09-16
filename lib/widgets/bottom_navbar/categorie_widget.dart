@@ -1,5 +1,5 @@
-import 'package:masrpay/utils/basic_screen_imports.dart';
-import 'package:masrpay/views/others/custom_image_widget.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/views/others/custom_image_widget.dart';
 
 class CategoriesWidget extends StatelessWidget {
   const CategoriesWidget({

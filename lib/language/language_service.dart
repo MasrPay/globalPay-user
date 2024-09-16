@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:masrpay/backend/utils/custom_snackbar.dart';
+import 'package:globalpay/backend/utils/custom_snackbar.dart';
 
 import '../backend/services/api_endpoint.dart';
 import 'language_model.dart';

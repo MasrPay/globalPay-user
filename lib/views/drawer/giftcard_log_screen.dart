@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
 
 import '../../data/recent_transaction_data.dart';
 import '../../language/english.dart';

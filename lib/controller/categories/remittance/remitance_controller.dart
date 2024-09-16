@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/model/common/common_success_model.dart';
-import 'package:masrpay/backend/model/remittance/remittance_get_recipient_model.dart';
-import 'package:masrpay/routes/routes.dart';
+import 'package:globalpay/backend/model/common/common_success_model.dart';
+import 'package:globalpay/backend/model/remittance/remittance_get_recipient_model.dart';
+import 'package:globalpay/routes/routes.dart';
 
 import '../../../backend/model/remittance/remittance_info_model.dart';
 import '../../../backend/services/api_services.dart';
@@ -157,7 +157,7 @@ class RemittanceController extends GetxController {
           NotificationService.showLocalNotification(
             title: 'Success',
             body:
-                'Your money has been send Successfully. Thanks for using masrpay',
+                'Your money has been send Successfully. Thanks for using globalpay',
           );
           Get.offAllNamed(
             Routes.bottomNavBarScreen,

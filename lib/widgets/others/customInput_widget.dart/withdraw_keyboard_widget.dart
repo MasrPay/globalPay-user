@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/widgets/text_labels/custom_title_heading_widget.dart';
-import 'package:masrpay/widgets/text_labels/title_heading4_widget.dart';
+import 'package:globalpay/widgets/text_labels/custom_title_heading_widget.dart';
+import 'package:globalpay/widgets/text_labels/title_heading4_widget.dart';
 
 import '../../../backend/utils/custom_loading_api.dart';
 import '../../../controller/categories/withdraw_controller/withdraw_controller.dart';

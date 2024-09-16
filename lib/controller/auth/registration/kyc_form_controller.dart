@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/controller/auth/registration/registration_controller.dart';
+import 'package:globalpay/controller/auth/registration/registration_controller.dart';
 
 import '../../../backend/local_storage/local_storage.dart';
 import '../../../backend/model/auth/registation/basic_data_model.dart';
@@ -256,10 +256,10 @@ class BasicDataController extends GetxController {
       'lastname': lastNameController.text,
       // 'email': controller.emailController.text,
       // 'phone_code': countryCode.value, ///OLD
-      'phone_code':'+2', ///NEW
+      'phone_code':'+966', ///NEW
       // 'phone': phoneNumberController.text,///OLD
        'phone': phoneNum,///NEW
-      'country': 'egypt',
+      'country': 'Saudi Arabia',
       'city': cityController.text,
       // 'zip_code': zipCodeController.text,
       'password': passwordController.text,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/controller/categories/virtual_card/flutter_wave_virtual_card/virtual_card_controller.dart';
+import 'package:globalpay/controller/categories/virtual_card/flutter_wave_virtual_card/virtual_card_controller.dart';
 
 import '../../../../backend/model/common/common_success_model.dart';
 import '../../../../backend/services/api_services.dart';

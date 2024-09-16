@@ -1,4 +1,4 @@
-import 'package:masrpay/widgets/others/glass_widget.dart';
+import 'package:globalpay/widgets/others/glass_widget.dart';
 
 import '../../../../backend/utils/custom_loading_api.dart';
 import '../../../../backend/utils/custom_snackbar.dart';

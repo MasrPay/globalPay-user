@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
-import 'package:masrpay/controller/categories/request_money/request_money_logs_controller.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/controller/categories/request_money/request_money_logs_controller.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
 
 import '../../../backend/model/request_money/request_money_log_model.dart';
 import '../../../backend/utils/custom_loading_api.dart';

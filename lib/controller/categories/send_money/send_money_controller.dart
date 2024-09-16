@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/model/categories/send_money/send_money_info_model.dart';
-import 'package:masrpay/routes/routes.dart';
+import 'package:globalpay/backend/model/categories/send_money/send_money_info_model.dart';
+import 'package:globalpay/routes/routes.dart';
 
 import '../../../backend/model/categories/send_money/check_user_with_qr_code.dart';
 import '../../../backend/model/common/common_success_model.dart';

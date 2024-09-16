@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
-import 'package:masrpay/widgets/buttons/primary_button.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/buttons/primary_button.dart';
 
 import '../../backend/utils/custom_loading_api.dart';
 import '../../backend/utils/status_data_widget.dart';

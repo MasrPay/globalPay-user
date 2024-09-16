@@ -1,4 +1,4 @@
-import 'package:masrpay/routes/route_pages.dart';
+import 'package:globalpay/routes/route_pages.dart';
 
 class Routes {
   // Page List

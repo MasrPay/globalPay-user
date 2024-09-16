@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
-import 'package:masrpay/widgets/buttons/primary_button.dart';
-import 'package:masrpay/widgets/inputs/phone_number_with_contry_code_input.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/buttons/primary_button.dart';
+import 'package:globalpay/widgets/inputs/phone_number_with_contry_code_input.dart';
 
 import '../../../backend/utils/custom_loading_api.dart';
 import '../../../controller/categories/remittance/edit_recipient_controller.dart';

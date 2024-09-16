@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_function_literals_in_foreach_calls
 
 import 'package:flutter/services.dart';
-import 'package:masrpay/backend/model/payment_link/type_selection_drop_down.dart';
-import 'package:masrpay/controller/categories/payments/upload_image_controller/upload_image_controller.dart';
-import 'package:masrpay/controller/profile/update_kyc_controller.dart';
+import 'package:globalpay/backend/model/payment_link/type_selection_drop_down.dart';
+import 'package:globalpay/controller/categories/payments/upload_image_controller/upload_image_controller.dart';
+import 'package:globalpay/controller/profile/update_kyc_controller.dart';
 
 import '../../../backend/model/common/common_success_model.dart';
 import '../../../backend/model/payment_link/payment_link_model.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/views/others/custom_image_widget.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/views/others/custom_image_widget.dart';
 import '../../custom_assets/assets.gen.dart';
 import '../../utils/custom_color.dart';
 import '../../utils/dimensions.dart';

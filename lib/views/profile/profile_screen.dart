@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/controller/profile/update_profile_controller.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/utils/size.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/controller/profile/update_profile_controller.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/utils/size.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
 
 import '../../backend/services/api_endpoint.dart';
 import '../../custom_assets/assets.gen.dart';

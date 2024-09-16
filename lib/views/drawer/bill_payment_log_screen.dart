@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
 
 import '../../backend/utils/custom_loading_api.dart';
 import '../../backend/utils/no_data_widget.dart';

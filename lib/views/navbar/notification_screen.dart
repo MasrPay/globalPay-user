@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:masrpay/widgets/bottom_navbar/notification_widget.dart';
+import 'package:globalpay/widgets/bottom_navbar/notification_widget.dart';
 
 import '../../backend/utils/custom_loading_api.dart';
 import '../../backend/utils/no_data_widget.dart';

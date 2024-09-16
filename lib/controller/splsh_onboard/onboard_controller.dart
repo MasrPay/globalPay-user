@@ -3,11 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/custom_assets/assets.gen.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/utils/custom_color.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/views/others/custom_image_widget.dart';
+import 'package:globalpay/custom_assets/assets.gen.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/utils/custom_color.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/views/others/custom_image_widget.dart';
 
 import '../../backend/local_storage/local_storage.dart';
 import '../app_settings/app_settings_controller.dart';

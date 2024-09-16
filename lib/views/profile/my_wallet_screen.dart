@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
-import 'package:masrpay/widgets/others/custom_glass/custom_glass_widget.dart';
-import 'package:masrpay/widgets/text_labels/title_heading2_widget.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/others/custom_glass/custom_glass_widget.dart';
+import 'package:globalpay/widgets/text_labels/title_heading2_widget.dart';
 
 import '../../data/recent_transaction_data.dart';
 import '../../language/english.dart';

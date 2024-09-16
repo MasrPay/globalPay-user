@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
-import 'package:masrpay/widgets/buttons/primary_button.dart';
-import 'package:masrpay/widgets/others/preview/amount_preview_widget.dart';
-import 'package:masrpay/widgets/others/preview/information_amount_widget.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/buttons/primary_button.dart';
+import 'package:globalpay/widgets/others/preview/amount_preview_widget.dart';
+import 'package:globalpay/widgets/others/preview/information_amount_widget.dart';
 
 import '../../../backend/services/notification_service.dart';
 import '../../../controller/categories/agent_moneyout/agent_moneyout_controller.dart';

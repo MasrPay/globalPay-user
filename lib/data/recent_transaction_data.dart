@@ -1,4 +1,4 @@
-import 'package:masrpay/model/recent_transaction_model.dart';
+import 'package:globalpay/model/recent_transaction_model.dart';
 
 import '../language/english.dart';
 

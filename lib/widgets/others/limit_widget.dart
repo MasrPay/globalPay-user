@@ -1,5 +1,5 @@
-import 'package:masrpay/utils/basic_screen_imports.dart';
-import 'package:masrpay/widgets/text_labels/title_heading5_widget.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/widgets/text_labels/title_heading5_widget.dart';
 
 class LimitWidget extends StatelessWidget {
   const LimitWidget({super.key, required this.fee, required this.limit});

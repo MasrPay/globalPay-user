@@ -1,10 +1,11 @@
-import 'package:masrpay/extentions/custom_extentions.dart';
+
+import 'package:globalpay/extentions/custom_extentions.dart';
 
 class ApiEndpoint {
-  // static const String mainDomain = "https://app.masrpay.com"; //LIVE
-  static const String mainDomain = "https://stgapp.masrpay.com"; //tEST
+  // static const String mainDomain = "https://com"; //LIVE
+  static const String mainDomain = "https://stg.globalpayholding.com"; //tEST
   static const String baseUrl = "$mainDomain/api";
-  //! auth
+  //! aut
   static String loginURL = '/user/login'.addBaseURl();
   static String logOutURL = '/user/logout'.addBaseURl();
   static String sendOTPEmailURL = '/user/send-code'.addBaseURl();

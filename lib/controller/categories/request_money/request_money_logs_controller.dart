@@ -1,4 +1,4 @@
-import 'package:masrpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
 
 import '../../../backend/model/common/common_success_model.dart';
 import '../../../backend/model/request_money/request_money_log_model.dart';

@@ -1,5 +1,5 @@
-import 'package:masrpay/controller/auth/login/signin_controller.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/controller/auth/login/signin_controller.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../backend/utils/custom_loading_api.dart';

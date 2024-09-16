@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/controller/auth/login/signin_controller.dart';
+import 'package:globalpay/controller/auth/login/signin_controller.dart';
 
 import '../../../backend/model/auth/login/reset_password.dart';
 import '../../../backend/services/api_services.dart';

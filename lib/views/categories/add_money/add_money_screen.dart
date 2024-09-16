@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/controller/categories/deposit/deposti_controller.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/controller/categories/deposit/deposti_controller.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
 
 import '../../../language/english.dart';
 import '../../../widgets/others/customInput_widget.dart/deposit_keyboard.dart';

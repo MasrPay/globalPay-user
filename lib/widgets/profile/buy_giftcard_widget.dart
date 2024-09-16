@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:masrpay/widgets/text_labels/title_heading2_widget.dart';
+import 'package:globalpay/widgets/text_labels/title_heading2_widget.dart';
 
 import '../../custom_assets/assets.gen.dart';
 import '../../language/english.dart';

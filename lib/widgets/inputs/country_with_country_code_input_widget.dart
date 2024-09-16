@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/backend/local_storage/local_storage.dart';
-import 'package:masrpay/utils/size.dart';
+import 'package:globalpay/backend/local_storage/local_storage.dart';
+import 'package:globalpay/utils/size.dart';
 
 import '../../controller/auth/registration/kyc_form_controller.dart';
 import '../../language/english.dart';

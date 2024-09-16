@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:masrpay/routes/routes.dart';
+import 'package:globalpay/routes/routes.dart';
 
 import 'backend/services/notification_service.dart';
 import 'backend/utils/network_check/dependency_injection.dart';

@@ -1,4 +1,4 @@
-masrpay
+GlobalPay
 2.0
 Please Fill Out The Field
 Sign In
@@ -27,7 +27,7 @@ Please Enter The Code
 Email Verification
 Resend
 xxx xxxx xxx
-masrpay-PAY AND GO
+globalPay-PAY AND GO
 The code is not valid
 +1684
 +1684 632 5468 783

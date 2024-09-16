@@ -1,4 +1,4 @@
-import 'package:masrpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
 
 class StatusDataWidget extends StatelessWidget {
   const StatusDataWidget({super.key, required this.text, required this.icon});

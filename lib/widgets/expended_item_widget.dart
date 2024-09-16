@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:masrpay/widgets/transaction_tile_widget.dart';
+import 'package:globalpay/widgets/transaction_tile_widget.dart';
 
 import '../../../utils/custom_color.dart';
 import '../../../utils/dimensions.dart';

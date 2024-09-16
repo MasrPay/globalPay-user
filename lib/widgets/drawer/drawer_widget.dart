@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
 
 import '../../backend/services/api_endpoint.dart';
 import '../../controller/others/log_out_controller.dart';

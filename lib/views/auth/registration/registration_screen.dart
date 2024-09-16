@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/language/language_controller.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/utils/size.dart';
-import 'package:masrpay/widgets/buttons/custom_text_button.dart';
-import 'package:masrpay/widgets/buttons/primary_button.dart';
-import 'package:masrpay/widgets/text_labels/title_heading2_widget.dart';
-import 'package:masrpay/widgets/text_labels/title_heading4_widget.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/language/language_controller.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/utils/size.dart';
+import 'package:globalpay/widgets/buttons/custom_text_button.dart';
+import 'package:globalpay/widgets/buttons/primary_button.dart';
+import 'package:globalpay/widgets/text_labels/title_heading2_widget.dart';
+import 'package:globalpay/widgets/text_labels/title_heading4_widget.dart';
 
 import '../../../controller/auth/registration/registration_controller.dart';
 import '../../../language/english.dart';
@@ -152,7 +152,7 @@ class RegistrationScreen extends StatelessWidget {
               controller: controller.emailController,
               hint: Strings.enterYourPhoneNumber.tr,
               label: Strings.phoneNumber.tr,
-              maxLength: 11,
+              maxLength: 10,
             ),
           ),
         ],

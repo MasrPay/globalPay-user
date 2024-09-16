@@ -5,10 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/utils/size.dart';
-import 'package:masrpay/widgets/text_labels/custom_title_heading_widget.dart';
-import 'package:masrpay/widgets/text_labels/title_heading4_widget.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/utils/size.dart';
+import 'package:globalpay/widgets/text_labels/custom_title_heading_widget.dart';
+import 'package:globalpay/widgets/text_labels/title_heading4_widget.dart';
 
 import '../../../controller/categories/virtual_card/sudo_virtual_card/sudo_adfund_controller.dart';
 import '../../../language/english.dart';

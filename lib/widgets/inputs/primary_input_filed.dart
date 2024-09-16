@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
 
 import '../../language/language_controller.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/routes/routes.dart';
+import 'package:globalpay/routes/routes.dart';
 
 import '../../backend/model/common/common_success_model.dart';
 import '../../backend/model/update_kyc/update_kyc_model.dart';

@@ -1,4 +1,4 @@
-package com.masrpay.masrpay
+package com.globalpay.globalpay
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.FlutterEngine

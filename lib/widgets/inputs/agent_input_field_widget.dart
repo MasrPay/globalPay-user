@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/language/language_controller.dart';
-import 'package:masrpay/utils/size.dart';
-import 'package:masrpay/widgets/text_labels/title_heading4_widget.dart';
+import 'package:globalpay/language/language_controller.dart';
+import 'package:globalpay/utils/size.dart';
+import 'package:globalpay/widgets/text_labels/title_heading4_widget.dart';
 
 import '../../controller/categories/agent_moneyout/agent_moneyout_controller.dart';
 import '../../language/english.dart';

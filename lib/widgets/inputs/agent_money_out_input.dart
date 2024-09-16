@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/controller/categories/agent_moneyout/agent_moneyout_controller.dart';
-import 'package:masrpay/language/language_controller.dart';
-import 'package:masrpay/utils/size.dart';
+import 'package:globalpay/controller/categories/agent_moneyout/agent_moneyout_controller.dart';
+import 'package:globalpay/language/language_controller.dart';
+import 'package:globalpay/utils/size.dart';
 
 import '../../language/english.dart';
 import '../../utils/custom_color.dart';

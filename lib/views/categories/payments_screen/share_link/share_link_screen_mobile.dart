@@ -1,5 +1,5 @@
 import 'package:flutter_svg/svg.dart';
-import 'package:masrpay/widgets/payment_link/primary_input_widget.dart';
+import 'package:globalpay/widgets/payment_link/primary_input_widget.dart';
 
 import '../../../../custom_assets/assets.gen.dart';
 import '../../../../routes/routes.dart';

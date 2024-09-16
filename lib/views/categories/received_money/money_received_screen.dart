@@ -1,8 +1,8 @@
 import 'package:flutter/services.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
-import 'package:masrpay/widgets/inputs/copy_with_input.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/inputs/copy_with_input.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../backend/utils/custom_loading_api.dart';

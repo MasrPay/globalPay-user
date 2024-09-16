@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:masrpay/utils/size.dart';
-import 'package:masrpay/widgets/text_labels/title_heading1_widget.dart';
+import 'package:globalpay/utils/size.dart';
+import 'package:globalpay/widgets/text_labels/title_heading1_widget.dart';
 
 import '../../language/english.dart';
 import '../../utils/custom_color.dart';

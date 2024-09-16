@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/utils/size.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
-import 'package:masrpay/widgets/buttons/primary_button.dart';
-import 'package:masrpay/widgets/dropdown/input_dropdown.dart';
-import 'package:masrpay/widgets/inputs/input_with_text.dart';
-import 'package:masrpay/widgets/inputs/primary_input_filed.dart';
-import 'package:masrpay/widgets/others/limit_widget.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/utils/size.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/buttons/primary_button.dart';
+import 'package:globalpay/widgets/dropdown/input_dropdown.dart';
+import 'package:globalpay/widgets/inputs/input_with_text.dart';
+import 'package:globalpay/widgets/inputs/primary_input_filed.dart';
+import 'package:globalpay/widgets/others/limit_widget.dart';
 
 import '../../../backend/services/notification_service.dart';
 import '../../../controller/categories/bill_pay/bill_pay_controller.dart';
@@ -128,7 +128,7 @@ class BillPayScreen extends StatelessWidget {
                           NotificationService.showLocalNotification(
                             title: 'Success',
                             body:
-                                'Your bill has been paid Successfully. Thanks for using masrpay',
+                                'Your bill has been paid Successfully. Thanks for using globalpay',
                           );
                         }));
               }),

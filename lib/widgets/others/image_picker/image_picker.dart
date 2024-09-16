@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:masrpay/controller/profile/update_profile_controller.dart';
-import 'package:masrpay/views/others/custom_image_widget.dart';
+import 'package:globalpay/controller/profile/update_profile_controller.dart';
+import 'package:globalpay/views/others/custom_image_widget.dart';
 
 import '../../../backend/services/api_endpoint.dart';
 import '../../../backend/utils/custom_snackbar.dart';

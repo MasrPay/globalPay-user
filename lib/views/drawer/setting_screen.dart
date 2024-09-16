@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/local_storage/local_storage.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/backend/local_storage/local_storage.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
 
 import '../../controller/drawer/setting_controller.dart';
 import '../../language/english.dart';

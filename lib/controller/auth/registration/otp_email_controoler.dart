@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/routes/routes.dart';
+import 'package:globalpay/routes/routes.dart';
 
 import 'kyc_form_controller.dart';
 

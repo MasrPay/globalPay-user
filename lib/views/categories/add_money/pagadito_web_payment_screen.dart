@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/widgets/others/congratulation_widget.dart';
+import 'package:globalpay/widgets/others/congratulation_widget.dart';
 
 import '../../../backend/services/notification_service.dart';
 import '../../../backend/utils/custom_loading_api.dart';

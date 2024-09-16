@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/custom_assets/assets.gen.dart';
+import 'package:globalpay/custom_assets/assets.gen.dart';
 
 import '../../utils/dimensions.dart';
 import '../../views/others/custom_image_widget.dart';

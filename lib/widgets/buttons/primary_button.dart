@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:masrpay/utils/custom_color.dart';
+import 'package:globalpay/utils/custom_color.dart';
 
 import '../../utils/dimensions.dart';
 import '../text_labels/title_heading3_widget.dart';

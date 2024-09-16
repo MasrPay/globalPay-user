@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/utils/custom_style.dart';
+import 'package:globalpay/utils/custom_style.dart';
 
 import '../utils/custom_color.dart';
 import '../utils/dimensions.dart';

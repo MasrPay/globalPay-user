@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
 
 import '../../backend/utils/custom_loading_api.dart';
 import '../../controller/app_settings/app_settings_controller.dart';
@@ -25,11 +25,12 @@ class SplashScreen extends StatelessWidget {
                   child: Stack(
                     alignment: Alignment.bottomCenter,
                     children: [
-                      CachedNetworkImage(
-                        imageUrl: controller.splashImagePath.value,
-                        placeholder: (context, url) => const Text(''),
-                        errorWidget: (context, url, error) => const Text(''),
-                      ),
+                      // CachedNetworkImage(
+                      //   imageUrl: controller.splashImagePath.value,
+                      //   placeholder: (context, url) => const Text(''),
+                      //   errorWidget: (context, url, error) => const Text(''),
+                      // ),
+                      Image.asset('assets/logo/logo.png',fit: BoxFit.cover),
                       Visibility(
                         visible: languageController.isLoading &&
                             controller.isVisible.value,

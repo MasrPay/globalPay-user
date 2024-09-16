@@ -1,10 +1,10 @@
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/language/language_controller.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/buttons/custom_text_button.dart';
-import 'package:masrpay/widgets/others/glass_widget.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/language/language_controller.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/buttons/custom_text_button.dart';
+import 'package:globalpay/widgets/others/glass_widget.dart';
 
 import '../../../backend/local_storage/local_storage.dart';
 import '../../../controller/auth/login/signin_controller.dart';
@@ -65,7 +65,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ///--------LOGO-------------
             _logoWidget(
               context,
-              logoHeight: height * 0.24,
+              logoHeight: height * 0.25,
             ),
             ///----------*****------------
             _bottomContainerWidget(
@@ -89,10 +89,10 @@ class _SignInScreenState extends State<SignInScreen> {
 
   _logoWidget(BuildContext context, {required double logoHeight}) {
     return Container(
-      margin: EdgeInsets.only(top: Dimensions.marginSizeVertical * 1.2),
+      margin: EdgeInsets.only(top: Dimensions.marginSizeVertical * 0.1),
       height: logoHeight,
       padding: EdgeInsets.only(
-        top: Dimensions.marginSizeVertical * 3,
+        top: Dimensions.marginSizeVertical * 1.5,
         bottom: Dimensions.marginSizeVertical * 1.5,
       ),
       child: BasicLogoWidget(),
@@ -158,7 +158,7 @@ class _SignInScreenState extends State<SignInScreen> {
             controller: controller.emailController,
             hint: Strings.enterYourPhoneNumber.tr,
             label: Strings.phoneNumber.tr,
-            maxLength: 11,
+            maxLength: 10,
           ),
           verticalSpace(Dimensions.heightSize * 0.7),
           PasswordInputWidget(
@@ -308,7 +308,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       Form(
                         key: forgotPasswordFormKey,
                         child: PrimaryInputWidget(
-                          maxLength: 11,
+                          maxLength: 10,
                           keyboardType: TextInputType.number,
                           controller: controller.emailForgotController,
                           hint: Strings.enterYourPhoneNumber.tr,

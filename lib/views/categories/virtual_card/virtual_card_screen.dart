@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/local_storage/local_storage.dart';
-import 'package:masrpay/controller/categories/virtual_card/flutter_wave_virtual_card/virtual_card_controller.dart';
-import 'package:masrpay/controller/categories/virtual_card/strowallet_card/strowallelt_info_controller.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
+import 'package:globalpay/backend/local_storage/local_storage.dart';
+import 'package:globalpay/controller/categories/virtual_card/flutter_wave_virtual_card/virtual_card_controller.dart';
+import 'package:globalpay/controller/categories/virtual_card/strowallet_card/strowallelt_info_controller.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
 
 import '../../../controller/categories/virtual_card/stripe_card/stripe_card_controller.dart';
 import '../../../controller/categories/virtual_card/sudo_virtual_card/virtual_card_sudo_controller.dart';

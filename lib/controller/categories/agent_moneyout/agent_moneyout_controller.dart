@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/model/categories/agent-moneyout/agent_money_info_model.dart';
+import 'package:globalpay/backend/model/categories/agent-moneyout/agent_money_info_model.dart';
 
 import '../../../backend/model/categories/agent-moneyout/check_user_with_qr_code.dart';
 import '../../../backend/model/common/common_success_model.dart';

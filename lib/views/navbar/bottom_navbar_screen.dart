@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/controller/navbar/navbar_controller.dart';
-import 'package:masrpay/custom_assets/assets.gen.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/views/others/custom_image_widget.dart';
+import 'package:globalpay/controller/navbar/navbar_controller.dart';
+import 'package:globalpay/custom_assets/assets.gen.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/views/others/custom_image_widget.dart';
 
 import '../../language/english.dart';
 import '../../utils/custom_color.dart';

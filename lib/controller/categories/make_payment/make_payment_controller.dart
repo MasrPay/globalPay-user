@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/routes/routes.dart';
+import 'package:globalpay/routes/routes.dart';
 
 import '../../../backend/model/categories/make_payment/check_merchant_scan_model.dart';
 import '../../../backend/model/categories/make_payment/make_payment_info_model.dart';

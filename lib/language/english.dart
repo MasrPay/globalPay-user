@@ -588,6 +588,6 @@ class Strings {
   static const String cardHolderName = 'Card Holder Name';
   static const String enterCardHolderName = 'Enter Card Holder Name';
   static const String moneyAddSuccess =
-      'Your money has been add successfully. Thanks for using masrpay';
+      'Your money has been add successfully. Thanks for using GlobalPay';
   static const String success = 'Success';
 }

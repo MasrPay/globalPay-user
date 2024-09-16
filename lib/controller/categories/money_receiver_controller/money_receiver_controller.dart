@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/model/categories/receive_money/receive_money_model.dart';
+import 'package:globalpay/backend/model/categories/receive_money/receive_money_model.dart';
 
 import '../../../backend/services/api_services.dart';
 import '../../../backend/utils/logger.dart';

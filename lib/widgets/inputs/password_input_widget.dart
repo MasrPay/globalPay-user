@@ -1,6 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/language/language_controller.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/language/language_controller.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
 
 class PasswordInputWidget extends StatefulWidget {
   final String hint, icon, label;
@@ -130,7 +130,7 @@ class _PrimaryInputWidgetState extends State<PasswordInputWidget> {
                 child: Icon(
                   obscureText ? Icons.visibility_off : Icons.visibility,
                   color: focusNode!.hasFocus
-                      ? CustomColor.primaryDarkColor
+                      ? CustomColor.primaryLightColor
                       : Get.isDarkMode
                           ? CustomColor.primaryDarkTextColor.withOpacity(0.2)
                           : CustomColor.primaryLightTextColor.withOpacity(0.2),

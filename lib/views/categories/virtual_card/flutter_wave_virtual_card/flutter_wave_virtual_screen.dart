@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_slider/carousel_controller.dart' as slider;
 import 'package:flip_card/flip_card.dart';
-import 'package:masrpay/extentions/custom_extentions.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
-import 'package:masrpay/widgets/others/custom_glass/custom_glass_widget.dart';
+import 'package:globalpay/extentions/custom_extentions.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/widgets/others/custom_glass/custom_glass_widget.dart';
 
 import '../../../../backend/model/categories/virtual_card/virtual_card_flutter_wave/card_info_model.dart';
 import '../../../../backend/utils/custom_loading_api.dart';

@@ -1,4 +1,4 @@
-import 'package:masrpay/custom_assets/assets.gen.dart';
+import 'package:globalpay/custom_assets/assets.gen.dart';
 
 import '../language/english.dart';
 import '../model/save_recipients_model.dart';

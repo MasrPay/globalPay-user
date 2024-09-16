@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/local_storage/local_storage.dart';
+import 'package:globalpay/backend/local_storage/local_storage.dart';
 
 import '../../backend/model/bottom_navbar_model/dashboard_model.dart';
 import '../../backend/services/api_services.dart';

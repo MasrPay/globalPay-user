@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:masrpay/backend/model/common/common_success_model.dart';
+import 'package:globalpay/backend/model/common/common_success_model.dart';
 
 import '../../../../backend/local_storage/local_storage.dart';
 import '../../../../backend/model/categories/virtual_card/virtual_card_flutter_wave/card_transaction_model.dart';

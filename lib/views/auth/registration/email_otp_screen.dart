@@ -1,6 +1,6 @@
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/backend/utils/custom_snackbar.dart';
-import 'package:masrpay/utils/basic_screen_imports.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/backend/utils/custom_snackbar.dart';
+import 'package:globalpay/utils/basic_screen_imports.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../controller/auth/registration/otp_email_controoler.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/utils/size.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/utils/size.dart';
 
 import '../../../custom_assets/assets.gen.dart';
 import '../../../language/english.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
 
 import '../../../../controller/categories/virtual_card/sudo_virtual_card/sudo_adfund_controller.dart';
 import '../../../../language/english.dart';
+import '../../../../utils/responsive_layout.dart';
 import '../../../../widgets/others/customInput_widget.dart/sudo_add_fund_keybaord.dart';
 
 class SudoAddFundScreen extends StatelessWidget {

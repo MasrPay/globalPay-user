@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/extentions/custom_extentions.dart';
-import 'package:masrpay/widgets/others/custom_glass/custom_glass_widget.dart';
+import 'package:globalpay/extentions/custom_extentions.dart';
+import 'package:globalpay/widgets/others/custom_glass/custom_glass_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../backend/model/categories/virtual_card/virtual_card_sudo/VirtualCardSudoInfoModel.dart';

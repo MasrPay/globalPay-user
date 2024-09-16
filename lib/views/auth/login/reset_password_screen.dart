@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/widgets/inputs/password_input_widget.dart';
-import 'package:masrpay/widgets/text_labels/title_heading2_widget.dart';
+import 'package:globalpay/widgets/inputs/password_input_widget.dart';
+import 'package:globalpay/widgets/text_labels/title_heading2_widget.dart';
 
 import '../../../backend/utils/custom_loading_api.dart';
 import '../../../controller/auth/login/reset_password_controller.dart';

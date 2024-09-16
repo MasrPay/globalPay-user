@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/routes/routes.dart';
+import 'package:globalpay/routes/routes.dart';
 
 import '../../../backend/local_storage/local_storage.dart';
 import '../../../backend/model/two_fa/two_fa_info_model.dart';

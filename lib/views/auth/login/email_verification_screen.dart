@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/controller/auth/login/signin_controller.dart';
-import 'package:masrpay/utils/custom_color.dart';
-import 'package:masrpay/utils/custom_style.dart';
-import 'package:masrpay/widgets/text_labels/custom_title_heading_widget.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/controller/auth/login/signin_controller.dart';
+import 'package:globalpay/utils/custom_color.dart';
+import 'package:globalpay/utils/custom_style.dart';
+import 'package:globalpay/widgets/text_labels/custom_title_heading_widget.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../controller/auth/login/sms_verification_controller.dart';

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/custom_assets/assets.gen.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/utils/custom_color.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/utils/size.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
-import 'package:masrpay/widgets/buttons/primary_button.dart';
-import 'package:masrpay/widgets/inputs/input_with_dropdown.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/custom_assets/assets.gen.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/utils/custom_color.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/utils/size.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/buttons/primary_button.dart';
+import 'package:globalpay/widgets/inputs/input_with_dropdown.dart';
 
 import '../../../controller/categories/send_money/send_money_controller.dart';
 import '../../../language/english.dart';
@@ -66,7 +66,7 @@ class MoneyTransferScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 CopyInputWidget(
-                  maxLength: 11,
+                  maxLength: 10,
                   keyboardType: TextInputType.number,
                   suffixIcon: Assets.icon.scan,
                   suffixColor: CustomColor.whiteColor,

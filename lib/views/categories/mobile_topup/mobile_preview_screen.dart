@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
-import 'package:masrpay/widgets/others/preview/amount_preview_widget.dart';
-import 'package:masrpay/widgets/others/preview/information_amount_widget.dart';
-import 'package:masrpay/widgets/others/preview/recipient_preview_widget.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/others/preview/amount_preview_widget.dart';
+import 'package:globalpay/widgets/others/preview/information_amount_widget.dart';
+import 'package:globalpay/widgets/others/preview/recipient_preview_widget.dart';
 
 import '../../../backend/services/notification_service.dart';
 import '../../../language/english.dart';
@@ -82,7 +82,7 @@ class MobilePreviewScreen extends StatelessWidget {
                   NotificationService.showLocalNotification(
                     title: 'Success',
                     body:
-                        'Your topup has been done Successfully. Thanks for using masrpay',
+                        'Your topup has been done Successfully. Thanks for using globalpay',
                   );
                 });
           }),

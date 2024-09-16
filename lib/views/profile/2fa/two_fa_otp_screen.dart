@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/widgets/text_labels/title_heading2_widget.dart';
+import 'package:globalpay/widgets/text_labels/title_heading2_widget.dart';
 
 import '../../../backend/local_storage/local_storage.dart';
 import '../../../backend/utils/custom_loading_api.dart';

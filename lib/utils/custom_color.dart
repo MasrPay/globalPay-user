@@ -8,7 +8,7 @@ class CustomColor {
   static const Color primaryDarkTextColor = Color(0xFFF4F6FC);
   static const Color secondaryDarkTextColor = Color(0xFF2B2A29);
 
-  static const Color primaryLightColor = Color(0xFFd62d27);
+  static const Color primaryLightColor = Color(0xFF66952E);
   static const Color secondaryLightColor = Color(0xFF1B2C3E);
   static const Color primaryBGLightColor = Color(0xFFF4F6FC);
   static const Color primaryLightScaffoldBackgroundColor = Color(0xFFF3F3F3);
@@ -19,7 +19,8 @@ class CustomColor {
   static const Color cardLightTextColor = Color(0xFFD9D9D9);
 
   static const Color whiteColor = Color(0xFFffffff);
-  static const Color redColor = Color(0xFFDC3A3A);
+  // static const Color redColor = Color(0xFFDC3A3A);
+  static const Color redColor = Color(0xFF66952E);
   static const Color yellowColor = Color(0xFFF4AB2A);
   static const Color greenColor = Color(0xFF2D845F);
   static const Color blackColor = Color(0xFF000000);

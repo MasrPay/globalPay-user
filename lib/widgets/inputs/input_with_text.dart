@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:masrpay/utils/size.dart';
+import 'package:globalpay/utils/size.dart';
 
 import '../../controller/categories/send_money/send_money_controller.dart';
 import '../../language/english.dart';

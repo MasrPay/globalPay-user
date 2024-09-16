@@ -2,14 +2,14 @@
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/backend/utils/custom_loading_api.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/back_button.dart';
-import 'package:masrpay/widgets/buttons/primary_button.dart';
-import 'package:masrpay/widgets/inputs/password_input_widget.dart';
-import 'package:masrpay/widgets/inputs/phone_number_with_contry_code_input.dart';
-import 'package:masrpay/widgets/inputs/primary_input_filed.dart';
+import 'package:globalpay/backend/utils/custom_loading_api.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/appbar/back_button.dart';
+import 'package:globalpay/widgets/buttons/primary_button.dart';
+import 'package:globalpay/widgets/inputs/password_input_widget.dart';
+import 'package:globalpay/widgets/inputs/phone_number_with_contry_code_input.dart';
+import 'package:globalpay/widgets/inputs/primary_input_filed.dart';
 import '../../../controller/auth/registration/kyc_form_controller.dart';
 import '../../../controller/auth/registration/otp_email_controoler.dart';
 import '../../../controller/auth/registration/registration_controller.dart';
@@ -130,7 +130,7 @@ class KycFromScreen extends StatelessWidget {
             readOnly: true,
             initVal: phoneNum,
             // countryCode: kycController.countryCode,///old
-            countryCode: '+2'.obs, ///New
+            countryCode: '+966'.obs, ///New
             // controller: kycController.phoneNumberController,///old
             hint: Strings.xxx.tr,
             label: Strings.phoneNumber.tr,
@@ -326,7 +326,7 @@ class KycFromScreen extends StatelessWidget {
 
                 TextButton(
                   onPressed: () async {
-                    const url = 'https://stgapp.masrpay.com/page/terms-and-conditions';
+                    const url = 'https://stg.globalpayholding.com/page/terms-and-conditions';
                     if (await canLaunch(url)) {
                       await launch(url, forceWebView: true, enableJavaScript: true);
                     } else {

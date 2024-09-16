@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:masrpay/routes/routes.dart';
-import 'package:masrpay/utils/custom_color.dart';
-import 'package:masrpay/utils/dimensions.dart';
-import 'package:masrpay/utils/responsive_layout.dart';
-import 'package:masrpay/widgets/appbar/appbar_widget.dart';
-import 'package:masrpay/widgets/drawer/save_recipients_widget.dart';
+import 'package:globalpay/routes/routes.dart';
+import 'package:globalpay/utils/custom_color.dart';
+import 'package:globalpay/utils/dimensions.dart';
+import 'package:globalpay/utils/responsive_layout.dart';
+import 'package:globalpay/widgets/appbar/appbar_widget.dart';
+import 'package:globalpay/widgets/drawer/save_recipients_widget.dart';
 
 import '../../backend/utils/custom_loading_api.dart';
 import '../../backend/utils/status_data_widget.dart';
